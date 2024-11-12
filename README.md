@@ -1,3 +1,19 @@
+
+# Abstract
+
+# Research Questions
+
+# Additional Datasets
+
+# Methods
+
+# Timeline
+
+# Organization
+
+# Questions for TA
+
+# Files
 ### clean_data
 Contains data that has been preprocessed and cleaned. The columns are as follow at the moment: \
 \
