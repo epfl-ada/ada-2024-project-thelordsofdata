@@ -64,3 +64,34 @@ Selma:
 
 # Questions for TA
 
+# Brainstorming
+
+CMU dataset: country/languages, mostly US movies, revenue, no budget, ethnicities in Freebase ID, gender/height/name of actors
+
+Ameer/Giada datasets: no country/languages, mostly US, domestic/foreign, can be overlapped with CMU
+
+Additional we can find: population (US and other over time), government investment?
+
+Brainstorming, Storyline suggestion:
+
+We are an American consulting firm and we have several requests from big-name movie producing companies to take a look at the international vs. domestic movie industry. We notice a trend over time of international movie markets increasing, and we would like to ensure America's dominance in the movie industry. We have increasing competition over foreign consumers - we would like to know what we can do to attract this international consumer base compared to what attracts American viewers. We would also like to know why international movies are suddenly stronger competitors.
+
+Potential Analysis we can do:
+
+1. Preferences in genre in US vs World for american movies (rank genres based on foreign revenues vs domestic revenues)
+2. Preferences in TV tropes in US vs World for american movies (rank tropes based on foreign revenues vs domestic revenues)
+3. More languages = more world audience? for american movies... not gonna give much if it's just american movies
+4. domestic vs foreign income, total and percentage, for american movies over time
+5. government investment for american movies over time vs domestic income over time
+6. budget vs foreign income vs domestic for american movies
+7. let's look for movie industry big numbers internationally - market size for countries over time, is america losing its market share
+
+Tasks:
+
+- Adjust ReadMe according to new idea
+- Make sure we've really found all the datasets we can that have domestic vs foreign income, maybe with budget too
+- Clean & consolidate that (including NaNs - we'll filter per question)
+- Find (in order of priority): movie industry market size/market share for countries over time, government investment for US movie industry over time, population over time
+- Initial plots can be done for points 1, 2, 4, 6 ASAP
+- For point 7, we can find pre-existing online plots to justify ourselves for the time being
+- Plots for 3, 5, 7 will need the additional data, and also more brainstorming on what we can do with non-american movies, can come later?
