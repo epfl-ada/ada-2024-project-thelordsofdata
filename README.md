@@ -21,10 +21,10 @@ We will supplement this data further using web scrapping methods. We will look f
 # Methods
 ## Data preprocessing
 ### 1. Cleaning the CMU dataset
-Within the CMU dataset, the columns that were no longer needed were removed (e.g. Movie Runtime). Any typos that involved special characters were removed and modifications were made to columns where any unnecessary supplementary information was contained. However, we chose to keep the rows which had NaN values in the columns we need. This was because we knew we were supplementing the data with additional datasets, and therefore some of the missing information would be provided by the additional datasets. We removed the rows that contains NaNs on a case-by-case basis for each of the analysis steps that we did, depending on what data was needed for each step.
+Within the CMU dataset, the columns that were no longer needed were removed (e.g. Movie Runtime). Any typos that involved special characters were removed and modifications were made to columns where any unnecessary supplementary information was contained. However, we chose to keep the rows which had NaN values in the columns we need. This missing information was provided by supplemental datasets. We removed the rows that contains NaNs on a case-by-case basis for each of the analysis steps that we did, depending on what data was needed for each step.
 
 ### 2. Supplementing dataset
-Using the additional datasets mentioned in the section above, we augmented the CMU dataset by adding the following four additional columns: budget, domestic gross, foreign gross, and worldwide gross. Any movies from these additional datasets that coincided with the CMU dataset were merged together while any new movies were concatenated at the end. Some of the additional movies added were produced from abroad and therefore help to strengthen the size of our foreign movies.
+Using the additional datasets mentioned in the section above, we augmented the CMU dataset by adding the following four additional columns: budget, domestic gross, foreign gross, and worldwide gross. Any movies that coincided with the CMU dataset were merged together while any new movies were concatenated at the end. Some of the additional movies added were produced from abroad and therefore help to strengthen the size of our foreign movies.
 
 Finally, we calculated the percentage of the worldwide gross that comes from domestic and foreign revenues and added them in two additional columns. This gives us the final dataset from which many of our plots have been and will be based on.
 
@@ -38,7 +38,7 @@ Data binning was used in this project to group movies of the same year together,
 Within this initial analysis, we have two scatterplots which look at how budget influences the percentage of revenue coming from domestic markets and those coming from foreign markets. The Pearson coefficient was then determined in order to evaluate the correlation. The p-value was found to be very low (< 0.05) showing it to be statistically significant.
 
 # Proposed Timeline
-The steps that will need to be completed for the third and final milestone (some of which are developments of steps already started for this milestone):
+The steps that will need to be completed for the third and final milestone:
 
 ### Step 1 - Complete Analysis
 Complete analysis on current data. Now we have looked at foreign vs. domestic revenues with respect to genre, time, and budget. Our next steps will be to look at population, tropes, and time with larger bins.
@@ -47,7 +47,7 @@ Complete analysis on current data. Now we have looked at foreign vs. domestic re
 Look at how the global market share of the film industry has evolved over time and see whether the American film industry is shrinking in the face of emerging markets
 
 ### Step 3 - Case studies
-Look at a few countries (e.g. India, France, etc...) outside of the United States and look at how the respective factors mentioned in the research questions impact the countries in question.
+Look at a few countries (e.g. India, France, etc...) outside of the United States and look at how the respective factors mentioned in the research questions impact the countries in question. We have already started on India under the test folder.
 
 ### Step 4 - Unsupervised learning
 Use unsupervised learning on genre and tropes in order to figure out whether a certain movie that has those characteristics would earn more domestically or internationally
