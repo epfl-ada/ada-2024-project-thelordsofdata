@@ -68,3 +68,5 @@ Use unsupervised learning on genre and tropes in order to figure out whether a c
 - Giada: Step 3 + 4
 - Ameer: Steps 3 + 4
 - Loïc:  Step 4
+
+  
