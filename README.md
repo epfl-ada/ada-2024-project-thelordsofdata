@@ -96,3 +96,10 @@ Tasks:
 - Initial plots can be done for points 1, 2, 4, 6 ASAP
 - For point 7, we can find pre-existing online plots to justify ourselves for the time being
 - Plots for 3, 5, 7 will need the additional data, and also more brainstorming on what we can do with non-american movies, can come later?
+
+## Shit to do
+1. Get some kind of results
+2. Explain the megaset with plots and comments
+3. Clean code for preprocess(tej indians) + (comments)
+4. Unchatgpt
+5. Make sure the format is respected
