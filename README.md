@@ -1,7 +1,7 @@
 
 # Abstract
 
-We are interested in analyzing the performance of American movies domestically and internationally. We hypothesize that throughout the years as English became the 'lingua franca' of the world and Hollywood gained in popularity, the percentage of revenue coming from foreign countries increased. Furthermore, we would like to determine what movies genres are more successful domestically and with foreign countries. Anothers aspect that we would like to investigate is the impact of goverment investment in art and cultures on the domestic and foreign revenue. 
+The American movie industry currently dominates cinema. The highest worldwide grossing movies are American and everyone in this day and age has heard of Hollywood. We are interested in researching the impact that the american rise to worldwide cinema dominance has had on the performance of American movies domestically. We hypothesize that throughout the years as English became the 'lingua franca' of the world and Hollywood gained in popularity, the percentage of revenue coming from foreign countries increased. Furthermore, we would like to determine what movies genres are more successful domestically and with foreign countries. Anothers aspect that we would like to investigate is the impact of goverment investment in art and cultures on the domestic and foreign revenue. 
 
 # Research Questions
 
