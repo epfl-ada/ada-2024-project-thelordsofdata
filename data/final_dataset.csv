@@ -295,10 +295,10 @@ austin powers: the spy who shagged me,1999,united states of america,"parody, tim
 australia,2008,"united states of america, australia, new zealand, united kingdom","adventure, history, period piece, epic, western, drama, war film, romantic drama, romance film",130000000,49554002,0.2303971330589651,165526808,0.7696028669410349,215080810,165,pg-13,65%,54%
 auto focus,2002,united states of america,"crime fiction, biography, indie, period piece, drama, biopic [feature], biographical film",7000000,2063196,0.7627480128105832,641755,0.2372519871894167,2704951,105,r,61%,71%
 autumn in new york,2000,united states of america,"romantic drama, romance film, drama, medical fiction",40000000,37761915,0.4162162662030088,52964753,0.5837837337969912,90726668,103,pg-13,53%,20%
-avatar,2009,"united states of america, united kingdom","thriller, science fiction, adventure, computer animation, epic, nature, fantasy, action",425000000,760507625,-0.500787962038351,2015837654,-1.3274123721597535,-1518622017,162,pg-13,82%,81%
-avatar: the way of water,2022,united states of america,"action, adventure, fantasy, sci-fi",460000000,684075767,-0.3464171128337596,1636174514,-0.8285615111287224,-1974717015,192,pg-13,92%,76%
+avatar,2009,"united states of america, united kingdom","thriller, science fiction, adventure, computer animation, epic, nature, fantasy, action",425000000,760507625,0.27392400749,2015837654,0.72607599251,2776345279,162,pg-13,82%,81%
+avatar: the way of water,2022,united states of america,"action, adventure, fantasy, sci-fi",460000000,684075767,0.2948284384,1636174514,0.7051715616,2320250281,192,pg-13,92%,76%
 avengers: age of ultron,2015,united states of america,"action, adventure, sci-fi",330600000,459005868,0.3271570206033651,944008095,0.6728429793966348,1403013963,141,pg-13,82%,76%
-avengers: endgame,2019,united states,"action, adventure, drama, sci-fi",356000000,858373000,-0.5739597570248686,1941066100,-1.2979134095844225,-1495528196,181,pg-13,90%,94%
+avengers: endgame,2019,united states,"action, adventure, drama, sci-fi",356000000,858373000,0.30662320891,1941066100,0.69337679109,2799439100,181,pg-13,90%,94%
 avengers: infinity war,2018,united states,"action, adventure, sci-fi",300000000,678815482,0.3313946589091205,1369544272,0.6686053410908794,2048359754,149,pg-13,92%,85%
 awake,2007,united states of america,"thriller, drama, psychological thriller",8600000,14377198,0.4360423645247587,18594823,0.5639576354752412,32972021,84,r,55%,23%
 away we go,2009,"united states of america, united kingdom","romantic comedy, indie, slice of life story, road movie, comedy of manners, comedy-drama, drama, comedy, romantic drama, romance film, tragicomedy",21000000,9451946,0.5990033242592979,6327509,0.4009966757407021,15779455,98,r,74%,67%
@@ -3499,7 +3499,7 @@ timeline,2003,united states of america,"thriller, science fiction, adventure, co
 tin cup,1996,united states of america,"romantic comedy, sports, romance film, drama, comedy",45000000,53854588,0.7099713994887165,22000000,0.2900286005112835,75854588,135,r,65%,74%
 tinker tailor soldier spy,2011,"france, germany, united kingdom","drama, mystery, thriller",21000000,24149393,0.2964832361648022,57303418,0.7035167638351978,81452811,127,r,65%,84%
 titan a.e.,2000,united states of america,"science fiction, family film, action, adventure, animation",75000000,22753426,0.6190627826684385,14001208,0.3809372173315615,36754634,94,pg,61%,50%
-titanic,1997,united states of america,"tragedy, costume drama, historical fiction, action/adventure, period piece, drama, disaster, romantic drama, romance film",200000000,674292608,-0.3321271992593648,1590450697,-0.7833868105442953,-2030223991,194,pg-13,69%,88%
+titanic,1997,united states of america,"tragedy, costume drama, historical fiction, action/adventure, period piece, drama, disaster, romantic drama, romance film",200000000,674292608,0.2977346733,1590450697,0.7022653267,2264743305,194,pg-13,69%,88%
 tmnt,2007,"united states of america, hong kong","adventure, superhero movie, computer animation, superhero, animation, martial arts film, fantasy, action, chinese movies",35000000,54149098,0.5634895090033804,41946920,0.4365104909966196,96096018,87,pg,60%,36%
 to rome with love,2012,"united states of america, spain, italy","romantic comedy, comedy film, romance film",21500000,16685867,0.2244910734959173,57641663,0.7755089265040827,74327530,112,r,40%,47%
 to save a life,2009,united states,drama,500000,3777210,0.9875399621634,47658,0.0124600378365998,3824868,120,pg-13,82%,41%
