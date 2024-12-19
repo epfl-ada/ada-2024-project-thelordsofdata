@@ -721,32 +721,6 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
   bottom: 0;
   display: none;
 }
-
-.title-background {
-  position: relative;
-  text-align: center;
-  color: white; /* Ensure readability */
-  padding: 20px;
-  background: url('assets/img/trump.png') no-repeat center center;
-  background-size: cover;
-}
-
-.title-background::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-  z-index: 0; /* Place the overlay behind the text */
-}
-
-.title-background h1,
-.title-background span {
-  position: relative;
-  z-index: 1; /* Ensure the text appears above the overlay */
-}
 @media (min-width: 1200px) {
   .intro-header {
     margin-top: 8.125rem;
