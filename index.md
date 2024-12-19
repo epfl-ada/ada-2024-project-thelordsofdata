@@ -6,11 +6,11 @@ subtitle: Selma Benhassine, Giada Ehrlich, Ameer Elkhayat, Loïc Finette, Liam G
 
 ## The Call to Action
 
-"Folks, **we’ve got a crisis.** Hollywood’s been around for over a century. We’re talking the biggest, highest-grossing movies in the world. But now, foreign movies—they’re coming in hot. These movies, folks, they’re not just coming for our audiences. They’re coming for our **box office,** our jobs, and, frankly, our popcorn money. It’s like the Oscars all over again—rigged!
+"Folks, **we’ve got a crisis.** Hollywood’s been around for over a century. We’re talking the biggest, highest-grossing movies in the world. But now, foreign movies—they’re coming in hot. They’re coming for our audiences, our **box office,** and, frankly, our jobs. It’s like the Oscars all over again—rigged!
 
 Now, here’s the thing: Hollywood’s top people, the big shots, they’re calling me. They’re saying, ‘Mr. Trump, you’re the only one who can fix this.’ And I say, ‘You’re absolutely right.’ 
 
-So here’s what we’re gonna do, folks. We’re smart, okay? Smarter than those guys. We’re going take a look at the data and have our experts analyse it. All the past American movies, who's buying them, Americans or foreigners, the influencing factors, everything. And we're going to use all that information to attract those foreign audiences. Huge audiences, all over the world, to watch our movies. **Made in America, baby.**
+So here’s what we’re gonna do, folks. We’re smart, okay? Smarter than those guys. We’re going take a look at the data and have our experts analyse it. All the past American movies, who's buying them, Americans or foreigners, the influencing factors, everything. And we're going to use all that information to attract those foreign audiences. Huge audiences, all over the world, will watch our movies. **Made in America, baby.**
 
 You better believe it folks! We’re going to outshine, outclass, and outplay every single foreign competitor, and **Make Hollywood Great Again!** "
 
@@ -43,6 +43,7 @@ The result we want to look at is:
 
 ## Data Exploration
 
+- Took inflation into consideration
 # Genre
 
 {% include domestic_revenue_by_genre.html %}
@@ -52,9 +53,41 @@ The result we want to look at is:
 
 # Date
 
+# Runtime
+
+# 
+
 # Total Revenue
 
 ---
+
+List of graphs:
+
+- Scatterplot: Worldwide gross vs foreign percentage
+- DEA: Genre counts, bar plot
+- avg worldwide gross per genre, bar for domestic and foreign
+- box plot genre revenue, domestic vs foreign
+- percentage, per genre, domestic vs foreign bar
+- distrubtion box plot for domestic vs foreign percentage, when movie made money, when movie lost money (less foreign in that case!)
+- Confidence intervals correlation for each variable with foreign percentage
+- Distribution of years bar, to show why we stopped at 2019
+- Gross over the years, then separated into domestic and foreign
+- Foreign gross over years with median, IQR, wiskers, and mean
+- Genre proportion over time, drama goes up
+- Budget over the years
+- Proportional distribution of profitable movies per year
+- Scatterplot budget domestic-percentage
+- Budget vs Success Rate (revenue/budget) scatterplot with success/failure threshold
+- Scatterplot runtime and domestic percentage
+- OLS Regression
+
+Path of duality 
+They have lo wnand high budget, we have foreign and domestic 
+how is it spread in pie chart betwen 2 things
+ bar plot genre distribution percentage 
+ plotted runtme with color code between 2 things scatterplot
+ OLS for both
+ explain most important ones based on OLS
 
 ## Analysis
 
