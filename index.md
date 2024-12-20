@@ -65,7 +65,7 @@ A quick interjection from Mr. Trump:
 
 ## Budget
 
-{% include log_budget.html %}
+{% include profitability_budget.html %}
 
 Looking at the data, we can observe a clear relationship between budget and foreign percentage. The Pearson correlation coefficient is 0.33, indicating a moderate positive correlation between these two variables. Furthermore, the p-value is less than 0.05, which is statistically significant—this suggests that the relationship we’re seeing is not due to chance.
 
