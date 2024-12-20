@@ -194,6 +194,39 @@ def plot_critics_score_distribution(data_domestic, data_foreign, bin_edges=None,
 
     plt.show()
 
+def plot_audience_score_distribution(data_domestic, data_foreign, bin_edges=None, output_path=None, save=False):
+    if bin_edges is None:
+        bin_edges = np.linspace(0, 1, 51)
+
+    plt.figure(figsize=(10, 6))
+
+    sns.histplot(data_domestic, 
+                 bins=bin_edges, 
+                 kde=True, 
+                 color='blue', 
+                 label='Movies with domestic % > 50%', 
+                 alpha=0.5)
+
+    sns.histplot(data_foreign, 
+                 bins=bin_edges, 
+                 kde=True, 
+                 color='red', 
+                 label='Movies with foreign % > 50%', 
+                 alpha=0.5)
+
+    plt.title('Distribution of Audience Score with KDE', fontsize=16)
+    plt.xlabel('Audience Score', fontsize=14)
+    plt.ylabel('Movie Count', fontsize=14)
+    plt.legend(fontsize=12)
+    plt.grid(axis='y', alpha=0.75)
+
+    plt.tight_layout()
+
+    if save:
+        plt.savefig(output_path, format='png', dpi=300)
+
+    plt.show()
+
 
 def plot_rating_profit_count(rating_df):
     ## box plot check the plots.. 
