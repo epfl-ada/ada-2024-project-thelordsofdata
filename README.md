@@ -1,7 +1,8 @@
 # Abstract
 
 The film industry has been with us for well over a century and spans all corners of the globe. With the advent of American political and economic power, which has grown through the past century, its soft power has as well. Thanks in large part to the world renowned Hollywood, the highest worldwide grossing movies are made in America. Therefore, we are interested in researching the impact that their rise to worldwide cinema dominance has had on its domestic performance. We hypothesize that throughout the years as English became the 'lingua franca' of the world and Hollywood gained in international popularity, the percentage of revenue coming from foreign countries increased. Furthermore, we would like to determine what movies genres are more successful domestically and with foreign countries. Poring through this data will help determine the key factors needed to realize a worldwide box office hit for major Hollywood studios.
-The link to our data story can be found [here](https://epfl-ada.github.io/ada-2024-project-thelordsofdata/).
+
+The link to our data story can be found here: [https://epfl-ada.github.io/ada-2024-project-thelordsofdata/](https://epfl-ada.github.io/ada-2024-project-thelordsofdata/).
 
 # Research Questions
 1. What is the evolution of domestic vs. foreign proportion of revenue on American movies over time? Should major Hollywood studios focus on attracting foreign audiences?
