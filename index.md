@@ -31,13 +31,8 @@ After cleaning and merging the data, we focused on movies released between 2000-
 
 ## Fact-checking Mr Trump
 
-We decided to compare movies that generate most of their revenue domestically and internationally. We assign movies that make more than 50 % of their revenue internationally to the red class and the other movies to the blue class. Performing this split, we obtain 1145 movies with a higher foreign percentage and 1544 with a higher domestic percentage. We then compute the profitability of a movie according to the following formula:
+We decided to compare movies that generate most of their revenue domestically and internationally. We assign movies that make more than 50 % of their revenue internationally to the red class and the other movies to the blue class. Performing this split, we obtain 1145 movies with a higher foreign percentage and 1544 with a higher domestic percentage. We then compute the profitability of a movie by dividing the revenue by the budget
 
-<div>
-$$
-Profitability = \frac{Worldwide Gross}{Budget} 
-$$
-</div>
 
 {% include profitability_by_class.html %}
 
@@ -90,6 +85,10 @@ Average, domestic > foreign, but not for fantasy, science fiction, adventure
 ## Date
 
 ## Runtime
+
+{% include runtime_plot.html %}
+
+From the runtime box plots we can observe that there is not much difference in the runtime of movies between the classes. The class where the domestic percentage dominates has a median of 103 and the other class, a median of 108. They both contain a similar amout of outliers. It is to note that for the blue class, there is one big outlier: a movie that has a runtime of 222 minutes.
 
 ## Ratings
 
