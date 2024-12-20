@@ -180,7 +180,7 @@ We Standardized and one-hot encoded categorical columns, we check for multicolli
 
 We can see that the most important feature is the genre animation. With a p-value of nearly 0, animated movies are highly likely to have a 57% increase in foreign percent of revenue. This is very significant. On the other hand, again with a miniscule p-value, sports movies are likely to have a 56% decrease in foreign percent of revenue. These are important factors to consider - not only which features to aim for, but what features to avoid. We also see a strong impact of the release during the holiday season (November and December) and a high budget on the percentage of the movie. Furthermore we see the appearance of the surprise emotion. It has a relatively high negative correlation.
 
-This plot offer us very good insight into the effects of our features, we can for example see that an animated movie with a high budget, released in Decembre, would likely have a very high foreign revenue percentage. On the other hand a PG rated movie about sports, will most likely not perform very well in the foreign market compared to the domestic market.
+This plot offer us very good insight into the effects of our features, we can for example see that an animated movie with a high budget, released in December, would likely have a very high foreign revenue percentage. On the other hand a PG rated movie about sports, will most likely not perform very well in the foreign market compared to the domestic market.
 
  We continue below by comparing older and more recent movies.
 
