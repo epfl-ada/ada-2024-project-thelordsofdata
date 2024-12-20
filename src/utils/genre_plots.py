@@ -6,6 +6,66 @@ import plotly.express as px
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+
+import pandas as pd
+import plotly.express as px
+from plotly.subplots import make_subplots
+
+def create_genre_revenue_plots(df_genre,genre_col, domestic_col, foreign_col):
+
+    fig1 = px.box(
+        df_genre,
+        x=genre_col,
+        y=domestic_col,
+        color=genre_col,
+        title='Distribution of Domestic Revenue by Genre',
+        labels={domestic_col: 'Domestic Revenue (USD)'}
+    )
+    fig1.update_layout(
+        width=700,
+        height=800,
+        yaxis_range=[0, 1.25e9],
+        title_x=0.5
+    )
+
+    fig2 = px.box(
+        df_genre,
+        x=genre_col,
+        y=foreign_col,
+        color=genre_col,
+        title='Distribution of Foreign Revenue by Genre',
+        labels={foreign_col: 'Foreign Revenue (USD)'}
+    )
+    fig2.update_layout(
+        width=700,
+        height=800,
+        yaxis_range=[0, 1.25e9],
+        title_x=0.5
+    )
+
+    fig = make_subplots(
+        rows=1,
+        cols=2,
+        subplot_titles=('Domestic Revenue by Genre', 'Foreign Revenue by Genre')
+    )
+
+    for trace in fig1.data:
+        fig.add_trace(trace, row=1, col=1)
+
+    for trace in fig2.data:
+        fig.add_trace(trace, row=1, col=2)
+
+    fig.update_layout(
+        width=1400,
+        height=800,
+        title_text='Revenue Distribution by Genre',
+        title_x=0.5,
+        showlegend=False
+    )
+
+    return fig
+
+
 def create_stacked_genre_bar_chart(df_genre_domestic, df_genre_foreign):
     domestic_counts = df_genre_domestic.groupby('Genres').size().reset_index(name='count').sort_values(by='count', ascending=False)
     foreign_counts = df_genre_foreign.groupby('Genres').size().reset_index(name='count').sort_values(by='count', ascending=False)
