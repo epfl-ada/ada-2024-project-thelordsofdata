@@ -31,16 +31,16 @@ After cleaning and merging the data, we focused on movies released between 2000-
 
 ## Fact-checking Mr Trump
 
-We decided to compare movies that generate most of their revenue domestically and internationally. We assign movies that make more than 50 % of their revenue internationally to the red class and the other movies to the blue class. Performing this split, we obtain 1145 movies with a higher foreign percentage and 1544 with a higher domestic percentage. We then compute the profitability of a movie by dividing the revenue by the budget
+We decided to compare movies that generate most of their revenue domestically and internationally. We assign movies that make more than 50 % of their revenue internationally to the red class and the other movies to the blue class. Performing this split, we obtain 1145 movies with a higher foreign percentage and 1544 with a higher domestic percentage. We then compute the profitability of a movie by dividing the revenue by the budget, then taking the logarithm to account for outliers.
 
 
 {% include log_profitability_count.html %}
 
-The outliers were removed from the box plots. From the box plots we can observe that the class with more than 50 % of their revenue coming from foreign countries has a higher median than the domestic class. However the red class shows a bit more variance. This confirms that movies that generate more of their revenue internationally are more profitable. Therefore Hollywood should focus on catering to an international audience.
+From the box plots we can observe that the class with more than 50 % of their revenue coming from foreign countries has a higher median than the domestic class. However the red class shows a bit more variance. This confirms that movies that generate more of their revenue internationally are more profitable. Therefore Hollywood should focus on catering to an international audience.
 
 {% include year_plot.html %}
 
-The outliers were removed. Oh no! The foreign percentage steadily goes up until 2015. Then it starts going down. We need it to keep going up to maximize profits. The main goal of our analysis is to determine the factors influencing the foreign percentage.
+Note that the outliers were removed from this graph. As we can see, the foreign percentage steadily goes up until 2015. Then it starts going down. Hollywood isn't happy - we need it to keep going up to maximize profits. Our mission, as decreed by Mr. Trump, is to analyse the data to determine the factors influencing the foreign percentage.
 
 ## Influencing Factors
 
@@ -59,7 +59,9 @@ The result we want to look at is:
 
 # Data Exploration
 
-A quick interjection from Mr. Trump: "Alright, folks, before the liberal left starts accusing me of **faking the numbers** again, let me set the record straight. We did something **smart**—we **adjusted the data**. Here’s the deal: **Inflation** and **outliters**-if you ignore them, you're just asking for fake news. It’s a total disaster. So, we did the right thing: we **adjusted** all USD amounts for inflation and took the logarithm of variables including budget and profitability to include outliers without letting them influence our analysis."
+A quick interjection from Mr. Trump: 
+
+"Alright, folks, before the liberal left starts accusing me of **faking the numbers** again, let me set the record straight. We did something **smart**—we **adjusted the data**. Here’s the deal: **Inflation** and **outliers**-if you ignore them, you're just asking for fake news. It’s a total disaster. So, we did the right thing: we **adjusted** all USD amounts for inflation and took the logarithm of variables including budget and profitability to include outliers without letting them influence our analysis."
 
 ## Budget
 
