@@ -16,6 +16,10 @@ You better believe it folks! We’re going to outshine, outclass, and outplay ev
 
 Words from the former and future convicted President himself. So let's get started.
 
+{% include year_plot.html %}
+
+The foreign percentage steadily goes up until 2015. Then it starts going down. We need it to keep going up. The outliers were removed.
+
 ## Dataset
 
 # Data Sources
@@ -24,9 +28,6 @@ The original CMU dataset only contains information on the total revenue generate
 
 Because our foreign gross represented the result we wanted to analyse, we needed to find more potentially influencing factors. We did so by web scraping from The Numbers for domestic/foreign gross, Rotten Tomatoes for reviews/plot summary, Wikipedia for country/language, and Box Office Mojo for domestic/foreign gross/ratings.
 
-{% include year_plot.html %}
-
-The foreign percentage steadily goes up until 2015. Then it starts going down. We need it to keep going up
 
 # Influencing Factors
 
