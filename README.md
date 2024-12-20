@@ -69,4 +69,21 @@ Use unsupervised learning on genre and tropes in order to figure out whether a c
 - Ameer: Steps 3 + 4
 - Loïc:  Step 4
 
+# Data Structure
+
+├── data                        <- Project data files
+│
+├── src                         <- Source code
+│   ├── data                            <- Data directory
+│   ├── models                          <- Model directory
+│   ├── utils                           <- Utility directory
+│   ├── scripts                         <- Shell scripts
+│
+├── tests                       <- Tests of any kind
+│
+├── results.ipynb               <- a well-structured notebook showing the results
+│
+├── .gitignore                  <- List of files ignored by git
+├── pip_requirements.txt        <- File for installing python dependencies
+└── README.md
   
