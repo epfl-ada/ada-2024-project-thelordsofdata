@@ -128,7 +128,7 @@ As we can see, the movies that do best internationally tend to be released durin
 
 {% include runtime_plot.html %}
 
-From the runtime box plots we can observe that there is not much difference in the runtime of movies between the classes. The class where the domestic percentage dominates has a median of 103 and the other class, a median of 108. They both contain a similar amount of outliers. It is to note that for the blue class, there is one big outlier: a movie that has a runtime of 222 minutes.
+From the runtime box plots we can observe that there is not much difference in the runtime of movies between the classes. The class where the domestic percentage dominates has a median of 103 and the other class, a median of 108. They both contain a similar amount of outliers. It is to note that the red class shows slightly more variance.
 
 ## Ratings
 
@@ -160,7 +160,7 @@ What we can conclude from these distributions is that the audience or critics sc
 
 {% include emotions_pie.html %}
 
-There are certainly more movies that have a higher domestic percentage of revenue than those with foreign. The differences seem to be pretty stable across the different emotions. It is also intuitive that the neutral emotion is dominant, as the plot summaries are supposed to be communicated in a neutral tone, and our model is not perfect in detecting emotions through actions described neutrally. We will see in later analysis if the emotions have an impact on the foreign percent of revenue or not.
+There are certainly more movies that have a higher domestic percentage of revenue than those with foreign. The differences seem to be pretty stable across the different emotions. It is also intuitive that the neutral emotion is dominant, as the plot summaries are supposed to be communicated in a neutral tone, and our model is not perfect in detecting emotions through actions described neutrally. Furthermore to use this model to its full potential and have a better accuracy, the model needs to be fine-tuned. Unfortunately we do not have any labeled data to perform this process. We will see in later analysis if the emotions have an impact on the foreign percent of revenue or not.
 
 ---
 
