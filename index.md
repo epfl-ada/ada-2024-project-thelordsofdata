@@ -16,11 +16,7 @@ You better believe it folks! We’re going to outshine, outclass, and outplay ev
 
 Words from the former and future convicted President himself. So let's get started.
 
-{% include year_plot.html %}
-
-The foreign percentage steadily goes up until 2015. Then it starts going down. We need it to keep going up. The outliers were removed.
-
-# Dataset
+## Dataset
 
 ## Data Sources
 
@@ -28,6 +24,19 @@ The original CMU dataset only contains information on the total revenue generate
 
 Because our foreign gross represented the result we wanted to analyse, we needed to find more potentially influencing factors. We did so by web scraping from The Numbers for domestic/foreign gross, Rotten Tomatoes for reviews/plot summary, Wikipedia for country/language, and Box Office Mojo for domestic/foreign gross/ratings.
 
+# Fact-checking Mr Trump
+
+We decided to compare movies that generate most of their revenue domestically and internationally. We assign movies that make more than 50 % of their revenue internationally to the red class and the other movies to the blue class. We the compute the profitability of a movie according to the following formula:
+
+$$Profitability = \frac{Worldwide Gross}{Budget}$$ 
+
+{% include profitability_by_class.html %}
+
+The outliers were removed from the box plots. From the box plots we can observe that the class with more than 50 % of their revenue coming from foreign countries has a higher median than the domestic class. However the red class shows a bit more variance. This confirms that movies that generate more of their revenue internationally are more profitable. Therefore Hollywood should focus on catering to an international audience
+
+{% include year_plot.html %}
+
+The outliers were removed. Oh no! The foreign percentage steadily goes up until 2015. Then it starts going down. We need it to keep going up to maximize profits. The main goal of our analysis is to determine the factors influencing the foreign percentage.
 
 ## Influencing Factors
 
