@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import plotly.express as px
+import scipy.stats as stats
 from scipy.stats import pearsonr
 from scipy.stats import spearmanr
 from sentence_transformers import SentenceTransformer, util
@@ -9,6 +10,7 @@ import seaborn as sns
 from plotly.subplots import make_subplots
 import plotly.express as px
 from matplotlib import pyplot as plt
+
 
 # Generates the line plots for foreign percentage and domestic in function of the years
 def generate_year_plot(df):
@@ -21,7 +23,7 @@ def generate_year_plot(df):
             x='Year', 
             y=['Domestic Percentage', 'Foreign Percentage'], 
             title='Average Percentages Over Time',
-            labels={'value': 'Percentage', 'variable': 'Percentages'}
+            labels={'value': 'Percentage', 'variable': 'Percentages'},
             width=1100,
             height=500
     )
@@ -192,3 +194,101 @@ def plot_critics_score_distribution(data_domestic, data_foreign, bin_edges=None,
 
     plt.show()
 
+
+def plot_rating_profit_count(rating_df):
+    ## box plot check the plots.. 
+
+    fig_box = px.box(
+        rating_df,
+        x="Rating", 
+        y="log_profit",
+        color="Foreign_higher",  
+        title="Distribution of Log Profitability by Rating",
+        labels={"Foreign_higher": "Revenue Type", "log_profit": "Log of Profitability"},
+        color_discrete_map={"Domestic % > 50%": "blue", "Foreign % > 50%": "red"}, 
+        category_orders={"Foreign_higher": [0, 1]}, 
+    )
+
+    fig_box.for_each_trace(
+        lambda t: t.update(name="")
+    )
+
+    fig_box.update_layout(
+        title={
+            "text": "Distribution of Log Profitability by Rating",
+            "x": 0.5,  
+            "xanchor": "center",  
+        },
+        xaxis_title="Rating",
+        yaxis_title="Log of Profitability",
+        legend_title="Revenue Type",
+        boxmode="group",  
+    )
+
+    fig_bar = px.histogram(
+        rating_df,
+        x="Rating",
+        color="Foreign_higher",  
+        barmode="group",  
+        title="Count of Movies by Rating (Separated by Foreign Percentage)",
+        color_discrete_map={"Domestic % > 50%": "blue", "Foreign % > 50%": "red"}, 
+    )
+
+
+    fig_bar.for_each_trace(
+        lambda t: t.update(name="Movies with domestic % > 50%" if t.name == "0" else "Movies with foreign % > 50%")
+    )
+
+    fig_bar.update_layout(
+        xaxis_title="Rating",
+        yaxis_title="Count of Movies",
+        showlegend=False, 
+        yaxis=dict(
+            autorange="reversed",  
+        )
+    )
+
+    fig_combined = fig_combined_plots(fig_box, fig_bar, "Movie Counts", log = False)
+    fig_combined
+
+
+def statistical_relevance_ratings(df):
+    # 1. Shapiro-Wilk Test for Normality on log-transformed profitability
+    shapiro_results = stats.shapiro(df["log_profit"])
+    print(f"Shapiro-Wilk Test p-value: {shapiro_results.pvalue}")
+
+    # If the p-value > 0.05, the data is likely normal, and we can proceed with ANOVA.
+
+    # Filter data by Foreign_higher (0 and 1)
+    df_domestic = df[df['Foreign_higher'] == 0]
+    df_foreign = df[df['Foreign_higher'] == 1]
+
+    # Perform the Kruskal-Wallis H test for each group if the data is not normal
+    if shapiro_results.pvalue <= 0.05:
+        print("Data is not normal, using Kruskal-Wallis H test.")
+
+        # Kruskal-Wallis H Test for movies with Foreign_higher == 0 (Domestic movies)
+        ratings_groups_domestic = [df_domestic[df_domestic['Rating'] == rating]["log_profit"] for rating in df_domestic['Rating'].unique() if rating != "G"]
+        h_stat_domestic, p_value_kw_domestic = stats.kruskal(*ratings_groups_domestic)
+        print(f"Kruskal-Wallis H Test (Domestic Movies) p-value: {p_value_kw_domestic}")
+
+        # Kruskal-Wallis H Test for movies with Foreign_higher == 1 (Foreign movies)
+        ratings_groups_foreign = [df_foreign[df_foreign['Rating'] == rating]["log_profit"] for rating in df_foreign['Rating'].unique() if rating != "G"]
+        h_stat_foreign, p_value_kw_foreign = stats.kruskal(*ratings_groups_foreign)
+        print(f"Kruskal-Wallis H Test (Foreign Movies) p-value: {p_value_kw_foreign}")
+
+    else:
+        print("Data is normal, you can use ANOVA.")
+
+        # ANOVA test for comparing means if data is normal
+        # Split the data based on ratings (exclude 'G' as per your earlier explanation)
+        ratings_groups_domestic = [df_domestic[df_domestic['Rating'] == rating]["log_profit"] for rating in df_domestic['Rating'].unique() if rating != "G"]
+        ratings_groups_foreign = [df_foreign[df_foreign['Rating'] == rating]["log_profit"] for rating in df_foreign['Rating'].unique() if rating != "G"]
+        
+        # Perform ANOVA for domestic movies
+        f_stat_domestic, p_value_anova_domestic = stats.f_oneway(*ratings_groups_domestic)
+        print(f"ANOVA p-value (Domestic Movies): {p_value_anova_domestic}")
+        
+        # Perform ANOVA for foreign movies
+        f_stat_foreign, p_value_anova_foreign = stats.f_oneway(*ratings_groups_foreign)
+        print(f"ANOVA p-value (Foreign Movies): {p_value_anova_foreign}")
