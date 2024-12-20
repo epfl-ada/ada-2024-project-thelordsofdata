@@ -2,7 +2,7 @@
 layout: page
 title: Make Hollywood Great Again
 subtitle: Selma Benhassine, Giada Ehrlich, Ameer Elkhayat, Loïc Finette, Liam Gibbons 
-cover-img: assets/img/trump.png
+cover-img: assets/img/trumphat.jpg
 ---
 
 <!-- <link rel="stylesheet" href="assets/css/style.css">
