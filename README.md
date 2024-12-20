@@ -51,7 +51,7 @@ In order to determine whether the mood of a movie could have an impact on what a
 - Liam:  Data Exploration
 
 # Running the Results notebook
-All the results can be found in the results.ipynb and the file must be downloaded to see all the plots and the requirements can be obtained by writing the following line:
+All the results can be found in the results.ipynb and the requirements can be obtained by writing the following line:
 ```text
 pip install -r requirements.txt
 ```
@@ -59,6 +59,8 @@ pip install -r requirements.txt
 # Data Structure
 ```text
 ├── data                        <- Project data files
+│
+├── images                      <- Images needed to render previously plotly plots visible on GitHub
 │
 ├── src                         <- Source code
 │   ├── data                            <- Data directory
