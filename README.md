@@ -79,9 +79,9 @@ Use unsupervised learning on genre and tropes in order to figure out whether a c
 │   ├── utils                           <- Utility directory
 │   ├── scripts                         <- Shell scripts
 │
-├── tests                       <- Tests of any kind
+├── tests                       <- Tests for all the different plots that were attempted
 │
-├── results.ipynb               <- a well-structured notebook showing the results
+├── results.ipynb               <- Notebook that displays all the results obtained, with all plots shown in the data story present
 │
 ├── .gitignore                  <- List of files ignored by git
 ├── pip_requirements.txt        <- File for installing python dependencies
