@@ -377,3 +377,85 @@ def statistical_relevance_ratings(df):
         # Perform ANOVA for foreign movies
         f_stat_foreign, p_value_anova_foreign = stats.f_oneway(*ratings_groups_foreign)
         print(f"ANOVA p-value (Foreign Movies): {p_value_anova_foreign}")
+
+
+
+
+
+def plot_emotion_pie(df):
+    # Define a custom color map for emotions
+    color_map = {
+        'anger': 'red',
+        'sadness': 'blue',
+        'joy': 'gold',
+        'disgust': 'green',
+        'neutral': 'brown',
+        'surprise': 'hotpink',
+        'fear': 'purple'
+    }
+
+    # Separate data for each group
+    domestic_counts = df[df['Foreign_higher'] == 0]['emotion'].value_counts().reset_index()
+    domestic_counts.columns = ['emotion', 'Counts']
+
+    foreign_counts = df[df['Foreign_higher'] == 1]['emotion'].value_counts().reset_index()
+    foreign_counts.columns = ['emotion', 'Counts']
+
+    # Create a subplot figure with two pie charts
+    fig2 = make_subplots(
+        rows=1, cols=2, 
+        specs=[[{'type': 'domain'}, {'type': 'domain'}]], 
+        subplot_titles=[
+            "Movies with Domestic % > 50%", 
+            "Movies with Foreign % > 50%"
+        ]
+    )
+
+    # Add pie chart for domestic movies
+    fig2.add_trace(
+        px.pie(
+            domestic_counts, 
+            names='emotion', 
+            values='Counts', 
+            color='emotion',
+            color_discrete_map=color_map
+        ).data[0], 
+        row=1, col=1
+    )
+
+    # Add pie chart for foreign movies
+    fig2.add_trace(
+        px.pie(
+            foreign_counts, 
+            names='emotion', 
+            values='Counts', 
+            color='emotion',
+            color_discrete_map=color_map
+        ).data[0], 
+        row=1, col=2
+    )
+
+    # Update layout to center title, adjust subplot titles, and show the legend
+    fig2.update_layout(
+        title=dict(
+            text="Emotion Distribution Comparison",
+            x=0.5,  # Center align the title
+            xanchor="center"
+        ),
+        showlegend=True,  # Enable the legend
+        legend=dict(
+            orientation="h",  # Horizontal legend
+            x=0.5,
+            xanchor="center",
+            y=-0.1
+        ),
+        font=dict(
+            size=12  # Adjust font size for subplot titles
+        )
+    )
+
+    # Adjust subplot title font size
+    for annotation in fig2['layout']['annotations']:
+        annotation['font'] = dict(size=15)  # Smaller font for subplot titles
+
+    return fig2
