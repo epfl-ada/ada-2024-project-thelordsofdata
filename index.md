@@ -65,17 +65,28 @@ The budget is correlated to the foreign percentage. This correlation is statisca
 # Genre
 
 {% include domestic_revenue_by_genre.html %}
+Top: adventure, fantasy, science fiction, family film
 {% include foreign_revenue_by_genre.html %}
+Top: adventure, fantasy, science fiction, action
 {% include genre_gross.html %}
+Foreign > gross top: action, adventure, drama
 {% include genre_percentage.html %}
+Average, domestic > foreign, but not for fantasy, science fiction, adventure
 
 # Date
 
 # Runtime
 
-# 
+# Ratings
 
-# Total Revenue
+{% include profit_rating_count.html %}
+
+# Reviews 
+
+<img src="plot_imgs/audience_score_distribution.png" alt="Audience Scores Distribution" />
+
+<img src="plot_imgs/critics_score_distribution.png" alt="Critics Scores Distribution" />
+
 
 ---
 
