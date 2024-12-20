@@ -55,11 +55,11 @@ Words from the former and future convicted President himself. So let's get start
 To understand the dynamics between domestic and international revenues, we began by collecting a variety of datasets:
 
 The CMU dataset provided data on worldwide revenue, genre, runtime and release date.
-We supplemented this data with additional datasets from Kaggle, Box Office Mojo, IMDb, Rotten Tomatoes, and TheMovieDB, to include important variables like budget, domestic gross, and worldwide gross. This dataset is available here [here](https://github.com/ntdoris/movie-revenue-analysis.)
+We supplemented this data with additional datasets from Kaggle, Box Office Mojo, IMDb, Rotten Tomatoes, and TheMovieDB, to include important variables like budget, domestic gross, and worldwide gross. This dataset is available [here](https://github.com/ntdoris/movie-revenue-analysis.)
 
 For more detailed insights, we web-scraped data from The Numbers (domestic, foreign gross, genres), Rotten Tomatoes (reviews, rating, runtime, plot summary), Wikipedia (country), and Box Office Mojo (domestic and foreign gross).
 
-On the plot summary we performed an emotional classification using Hartman's DistilRoberta model available[here](https://huggingface.co/j-hartmann/emotion-english-distilroberta-base.). The possible categories are suprise, fear, disgust, joy, anger, sadness and neutral.
+On the plot summary we performed an emotional classification using Hartman's DistilRoberta model available [here](https://huggingface.co/j-hartmann/emotion-english-distilroberta-base.). The possible categories are suprise, fear, disgust, joy, anger, sadness and neutral.
 
 After cleaning and merging the data, we focused on movies released between 2000-2019, with a total of 2689 movies that met our criteria of having at least 90 entries per year. This dataset is our starting point for uncovering trends that drive foreign revenue.
 
