@@ -8,11 +8,33 @@ cover-img: 'assets/img/trump.png'
 <link rel="stylesheet" href="assets/css/style.css">
 
 <style>
-    /*Custom css for the page*/
-    .page-heading h1{
-        background-color: rgba(190, 4, 4, 1);
+    /* Custom CSS for the page */
+    .page-heading h1 {
+        background-color:rgb(9, 70, 169);
+    }
+
+    /* Ensure the cover image fits without affecting other content */
+    .page-heading {
+        background-image: url('assets/img/trump.png');
+        background-size: cover; /* Make the image cover the section */
+        background-position: center; /* Center the image */
+        height: 400px; /* Adjust the height as needed */
+        width: 100%; /* Make sure it spans the width of the page */
+        position: relative;
+    }
+
+    /* Optionally, ensure that the heading text remains legible on the image */
+    .page-heading h1 {
+        color: white; /* Change text color for visibility */
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 </style>
+
+
 
 # The Call to Action
 
