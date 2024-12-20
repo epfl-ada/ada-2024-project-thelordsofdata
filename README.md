@@ -5,7 +5,7 @@ The film industry has been with us for well over a century and spans all corners
 The link to our data story can be found here: [https://epfl-ada.github.io/ada-2024-project-thelordsofdata/](https://epfl-ada.github.io/ada-2024-project-thelordsofdata/).
 
 # Research Questions
-1. What is the evolution of domestic vs. foreign proportion of revenue on American movies over time? Should major Hollywood studios focus on attracting foreign audiences?
+1. How can American studios produce movies that incentivize foreign audiences
 2. What are American preferences in genre and character tropes, and which ones would incentive foreign audiences to watch American movies?
 3. How does a movie's production budget impact the domestic/foreign revenue split? Does a larger production budget allow movies to reach a larger foreign audience?
 4. How has the market of the international movie industry evolved over time, and how has that impacted the American market share?
