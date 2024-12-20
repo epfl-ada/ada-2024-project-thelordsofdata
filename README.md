@@ -21,7 +21,7 @@ We started with the CMU movie.metadata dataset. It contains 81740 movies with th
 # Methods
 ## Data preprocessing
 ### 1. Cleaning the CMU dataset
-Within the CMU dataset, the columns that were no longer needed were removed (e.g. the Wikipedia and Free base IDs). Any typos that involved special characters were removed and modifications were made to columns where any unnecessary supplementary information was contained. However, any rows that had NaNs in columns that we required were removed or replaced by information obtained via the scraping method detailed above.
+Within the CMU dataset, the columns that were no longer needed were removed (e.g. the Wikipedia and Freebase IDs). Any typos that involved special characters were removed and modifications were made to columns where any unnecessary supplementary information was contained. However, any rows that had NaNs in columns that we required were removed or replaced by information obtained via the scraping method detailed above.
 
 ### 2. Supplementing dataset
 In order to augment the CMU dataset, we used the scraping method mentioned above which resulted in the addition of additional columns,  of which the most important include budget, domestic gross, foreign gross, and worldwide gross. Any movies that coincided with the CMU dataset were merged together while any new movies were concatenated at the end. The addition of new movies at the end help to bring up the number of movies in our dataset to nearly 2,700.
