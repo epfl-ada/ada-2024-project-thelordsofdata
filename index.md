@@ -61,7 +61,7 @@ The result we want to look at is:
 
 Alright, folks, before the liberal left starts accusing me of **faking the numbers** again, let me set the record straight. We did something **smart**—we **adjusted the data**. Here’s the deal: **Inflation**—it’s a **huge factor**, believe me. If you compare the box office earnings of a **1990 movie** to a **2019 movie**, you're just asking for fake news. It’s a total disaster. So, we did the right thing: we **adjusted** for inflation! 
 
-Now, we’ve got the real facts, folks. It’s not just about making a ton of money—it’s about making **smart money**, at the **right time**, in the **right way**. And guess what? We’ve done the work to make sure we’re getting the **truth**. We’re not letting **inflation** fool us!
+Now, we’ve got the real facts, folks. It’s not just about making a ton of money—it’s about making **smart money**. And guess what? We’ve done the work to make sure we’re getting the **truth**. We also have taken the log of some of our continuous variables including budget and profitability to make sure no pesky outliers get in the way of a readable clean graph. We’re not letting **inflation** or **outliers** fool us!
 
 ## Budget
 
@@ -91,11 +91,13 @@ From the runtime box plots we can observe that there is not much difference in t
 
 {% include profit_rating_count.html %}
 
-Domestic p-value: 0.7284
-Foreign p-value: 1.5799e-8 
-while ignoring g rating for too low count, found using the Kruskal-Wallis H test as the data is skewed and therefore not normally distributed. It compares the medians of the 3 independent groups.
+“Alright, here’s the deal. We had to drop the ‘G’ rating, okay? The count was just too low. You can’t make decisions based on bad data—everyone knows that. So we said, let’s focus on what matters, and that’s the ratings with enough data to work with.
 
-These p-values tell us that the average profitability of movies that garner more domestic revenue do not seem to be impacted by the movie's ratings, but movies with more foreign revenue are more likely to, due to a highly significant p-value. 
+Now, the analysis we did? It was top-notch—really fantastic. We used the Kruskal-Wallis H test. It’s a very strong test, folks. It compares the medians of different groups, and we used it because the data is skewed, not normal. We needed something reliable, and this test gets the job done.
+
+Here’s what we found: For movies mostly making their money in the U.S. (that’s domestic revenue), the ratings don’t really make a difference. The p-value there? 0.7284. Doesn’t show anything significant—nothing big to worry about. The ratings don’t impact domestic profits much.
+
+But when we looked at foreign revenue—that’s where the magic happens. The p-value was 1.57e-8, and let me tell you, that’s huge. That’s a very significant difference. So, the rating of a movie really matters when you’re talking about international markets. Certain ratings, like PG-13 or R, they just do better overseas. It’s clear, folks, ratings make a big impact on foreign profits.”
 
 ## Reviews 
 
