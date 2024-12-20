@@ -93,11 +93,11 @@ From the runtime box plots we can observe that there is not much difference in t
 
 “Alright, here’s the deal. We had to drop the ‘G’ rating, okay? The count was just too low. You can’t make decisions based on bad data—everyone knows that. So we said, let’s focus on what matters, and that’s the ratings with enough data to work with.
 
-Now, the analysis we did? It was top-notch—really fantastic. We used the Kruskal-Wallis H test. It’s a very strong test, folks. It compares the medians of different groups, and we used it because the data is skewed, not normal. We needed something reliable, and this test gets the job done.
+We did the Shapiro-Wilk test on the data—believe me, we got the numbers—and guess what? The p-value came back so small it’s practically zero. It’s clear, even when taking the logarithm of the profitability, the data isn’t normal, okay? But we’re smart. We move on to the **Kruskal-Wallis test**, very powerful. It compares the medians to disregard skewed distributions.
 
-Here’s what we found: For movies mostly making their money in the U.S. (that’s domestic revenue), the ratings don’t really make a difference. The p-value there? 0.7284. Doesn’t show anything significant—nothing big to worry about. The ratings don’t impact domestic profits much.
+Now, for the domestic movies—you know, the ones with more revenue from the good old US of A—we ran the test, and the p-value was **0.68**. That’s huge. It’s not significant at all. What does that mean? The ratings don’t really matter for domestic movies when it comes to profitability. They’re all doing about the same.
 
-But when we looked at foreign revenue—that’s where the magic happens. The p-value was 1.57e-8, and let me tell you, that’s huge. That’s a very significant difference. So, the rating of a movie really matters when you’re talking about international markets. Certain ratings, like PG-13 or R, they just do better overseas. It’s clear, folks, ratings make a big impact on foreign profits.”
+But here's the kicker - for the movies that get the overseas money, we got something very, very different. The p-value was **9.6e-09**. That’s incredibly small, folks, and I’m talking **really significant**. This tells us—big time—that the movie rating does matter when it comes to profitability for movies with more international revenue. Big difference, big results, no question about it. The R rating isn't doing as well as PG-13 or PG overseas, folks."
 
 ## Reviews 
 
