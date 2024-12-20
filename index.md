@@ -16,7 +16,7 @@ You better believe it folks! We’re going to outshine, outclass, and outplay ev
 
 Words from the former and future convicted President himself. So let's get started.
 
-## Dataset
+# Dataset
 
 ## Data Sources
 
@@ -24,7 +24,7 @@ The original CMU dataset only contains information on the total revenue generate
 
 Because our foreign gross represented the result we wanted to analyse, we needed to find more potentially influencing factors. We did so by web scraping from The Numbers for domestic/foreign gross, Rotten Tomatoes for reviews/plot summary, Wikipedia for country/language, and Box Office Mojo for domestic/foreign gross/ratings. We focused on movies with at least 90 counts per year. This left us with 2689 movies from 2000 - 2019
 
-# Fact-checking Mr Trump
+## Fact-checking Mr Trump
 
 We decided to compare movies that generate most of their revenue domestically and internationally. We assign movies that make more than 50 % of their revenue internationally to the red class and the other movies to the blue class. Performing this split, we obtain 1145 movies with a higher foreign percentage and 1544 with a higher domestic percentage. We then compute the profitability of a movie according to the following formula:
 
