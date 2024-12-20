@@ -31,46 +31,30 @@ From the augmented dataset, we were then able to explore how some of the differe
 
 
 ## Analysis
-For our analysis, we used OLS in order to evaluate the correlation between the different factors and revenue. 
+For our analysis, we used OLS in order to evaluate the correlation between the different factors and revenue. Some of the factors involved came from performing a sentimental analysis on the plot summaries.
 
 ### OLS Coefficient 
 Now that we have explored at the distribution and relationships between the budget, genre, release date, runtime, rating, reviews, and finally the percentage of foreign revenue of a movie, we can now begin to properly analyse these relationships. We want to know which features predict a higher percentage of foreign revenue by comparing the OLS Coefficient of each feature.
 
-The OLS coefficient represents the expected change in the foreign percentage of revenue for a one-unit increase in the predictor variable, holding all other variables constant. It's important to look at the p-value associated with the coefficient to determine whether the relationship is statistically significant.
+The OLS coefficient represents the expected change in the foreign percentage of revenue for a one-unit increase in the predictor variable, holding all other variables constant. After dropping the columns unrelated to the prediction of the foreign percentage and one-hot encoding the necessary ones, we use a Variance Inflation factor test (VIF) to test for multicolinearity, removing one of the ratings in the process. It's important to look at the p-value associated with the coefficient to determine whether the relationship is statistically significant.
 
-Below, we compare the OLS coefficients over 2000-2019, but then separate between 2000-2010 and 2010-2019 in order to take a closer look at more recent impact of the features.
+### Sentimental Analysis
+In order to determine whether the mood of a movie could have an impact on what appeals to foreign audience, we performed a sentimental analysis on the plot summaries using the method distillroberta. This then defined each plot summary as expressing a certain emotion which was then associated with the relevant movie, and was used when calculating the OLS.
 
-# Proposed Timeline
-The steps that will need to be completed for the third and final milestone:
-
-### Step 1 - Complete Analysis
-Complete analysis on current data. Now we have looked at foreign vs. domestic revenues with respect to genre, time, and budget. Our next steps will be to look at population, tropes, and time with larger bins.
-
-### Step 2 - Market share globally
-Look at how the global market share of the film industry has evolved over time and see whether the American film industry is shrinking in the face of emerging markets
-
-### Step 3 - Case studies
-Look at a few countries (e.g. India, France, etc...) outside of the United States and look at how the respective factors mentioned in the research questions impact the countries in question. We have already started on India under the test folder.
-
-### Step 4 - Unsupervised learning
-Use unsupervised learning on genre and tropes in order to figure out whether a certain movie that has those characteristics would earn more domestically or internationally
-
-
-
-- 15.11.2024    -   Initial Analysis and Data Handling Framework (Milestone 2)
-- 22.11.2024    -   Step 1, Step 2
-- 29.11.2024    -   Homework 2
-- 06.12.2024    -   Step 3
-- 13.12.2024    -   Step 4
-- 20.12.2024    -   Project Milestone 3 Submission
 
 # Organization
 
-- Liam: Step 1 + 3
-- Selma: Step 2 + 3
-- Giada: Step 3 + 4
-- Ameer: Steps 3 + 4
-- Loïc:  Step 4
+- Selma: Website, Data Story, Data Exploration
+- Giada: Data Exploration, Analysis
+- Ameer: Data Exploration, Analysis
+- Loïc:  Website, Data Augmentation, Data Exploration, Analysis
+- Liam:  Data Exploration
+
+# Running the Results notebook
+All the results can be found in the results.ipynb and the requirements can be obtained by writing the following line:
+```text
+pip install -r requirements.txt
+```
 
 # Data Structure
 ```text
