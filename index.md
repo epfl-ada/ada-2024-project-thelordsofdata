@@ -59,29 +59,27 @@ The result we want to look at is:
 
 # Data Exploration
 
-Alright, folks, before the liberal left starts accusing me of **faking the numbers** again, let me set the record straight. We did something **smart**—we **adjusted the data**. Here’s the deal: **Inflation**—it’s a **huge factor**, believe me. If you compare the box office earnings of a **1990 movie** to a **2019 movie**, you're just asking for fake news. It’s a total disaster. So, we did the right thing: we **adjusted** for inflation! 
-
-Now, we’ve got the real facts, folks. It’s not just about making a ton of money—it’s about making **smart money**. And guess what? We’ve done the work to make sure we’re getting the **truth**. We also have taken the log of some of our continuous variables including budget and profitability to make sure no pesky outliers get in the way of a readable clean graph. We’re not letting **inflation** or **outliers** fool us!
+A quick interjection from Mr. Trump: "Alright, folks, before the liberal left starts accusing me of **faking the numbers** again, let me set the record straight. We did something **smart**—we **adjusted the data**. Here’s the deal: **Inflation** and **outliters**-if you ignore them, you're just asking for fake news. It’s a total disaster. So, we did the right thing: we **adjusted** all USD amounts for inflation and took the logarithm of variables including budget and profitability to include outliers without letting them influence our analysis."
 
 ## Budget
 
 {% include log_budget.html %}
 
-Look at the data, folks—it's clear as day: **budget** is closely linked to **foreign percentage**. We've got a **Pearson coefficient** of **0.33**, and the **p-value** is **less than 0.05**—that’s statistically significant! This isn’t some fake news, it’s real data, proving that bigger budgets bring in more international success. Simple, folks!
+Looking at the data, we can observe a clear relationship between budget and foreign percentage. The Pearson correlation coefficient is 0.33, indicating a moderate positive correlation between these two variables. Furthermore, the p-value is less than 0.05, which is statistically significant—this suggests that the relationship we’re seeing is not due to chance.
 
-Now, you might’ve already guessed it—more budget means more marketing, more attention, more box office sales. It’s intuitive, right? But here’s the kicker: **foreigners aren’t just watching American movies by default**—we’ve got to **grab their attention**. If we take this information at face value, it’s time to stop playing small and start focusing on the biggest blockbusters that will pull in those huge international numbers. That’s where the money is!
+In simpler terms, as the budget increases, there's a tendency for movies to earn a higher percentage of their revenue from international markets. This makes sense: larger budgets often mean more resources for marketing and wider global distribution, which can lead to increased box office sales abroad.
 
 ## Genre
 
 {% include genre_proportional.html %}
 
-"Folks, look at the charts, we’ve got some amazing insights here. Comedy, believe me, it’s doing much better in the United States, but look, terrible, terrible results abroad. Why? It’s all about culture, it’s all about language—stuff that’s hard to translate overseas. The jokes just don’t work the same. But you know what does work abroad? Action, drama, and adventure. These are the big ones. You’ve got explosions, you’ve got emotion, you’ve got everything people love—boom, pow, all that good stuff. And that, my friends, crosses borders easily."
+Looking at the data, we can see clear trends: Comedy performs significantly better in the United States, but struggles to gain traction in international markets. This is likely due to cultural and linguistic differences that make humor difficult to translate effectively. On the other hand, genres like Action, Drama, and Adventure have broader appeal across borders. These genres, characterized by strong visual elements, excitement, and universal themes of emotion, tend to resonate more easily with global audiences, leading to better international performance.
 
 {% include genre_percentage.html %}
 
-"Now, let’s get this straight: While drama does well overseas, there are fewer drama movies that are smashing it abroad compared to those that are killing it here in the U.S. So, while people love a good drama, it’s still the action, adventure, and sci-fi movies that are raking in the big bucks on the international stage.
+It’s important to note that while Drama performs well internationally, there are fewer drama films that are performing exceptionally abroad compared to those that are succeeding domestically in the U.S. We can see that Drama movies garner more of their revenue domestically than internationally. On the global stage, Action, Adventure, and Sci-Fi movies are the big earners, generating the more significant share of the revenue.
 
-And let's be honest—some genres are just All-American, okay? If we want to make sure we’re attracting foreign audiences, we might want to stay away from teen, indie, and comedy films. Stick to what works, folks. Stick to the winners."
+Additionally, some genres have a strong American appeal but don’t translate as well internationally. To capture a larger foreign audience, it may be more effective to focus on genres like Action, Adventure, and Sci-Fi while steering away from Teen, Indie, and Comedy films, which tend to have a more limited international appeal.
 
 ## Month
 
@@ -99,22 +97,27 @@ From the runtime box plots we can observe that there is not much difference in t
 
 {% include profit_rating_count.html %}
 
-“Alright, here’s the deal. We had to drop the ‘G’ rating, okay? The count was just too low. You can’t make decisions based on bad data—everyone knows that. So we said, let’s focus on what matters, and that’s the ratings with enough data to work with.
+We decided to exclude the **'G'** rating due to a low count of data, as decisions based on insufficient data would lead to unreliable conclusions. Our focus shifted to the ratings with more substantial data, ensuring meaningful analysis.
 
-We did the Shapiro-Wilk test on the data—believe me, we got the numbers—and guess what? The p-value came back so small it’s practically zero. It’s clear, even when taking the logarithm of the profitability, the data isn’t normal, okay? But we’re smart. We move on to the **Kruskal-Wallis test**, very powerful. It compares the medians to disregard skewed distributions.
+To assess the data distribution, we conducted the **Shapiro-Wilk test**, and the result was a very low p-value, effectively approaching zero. This indicates that, even after applying the logarithm to profitability, the data is not normally distributed. As a result, we proceeded with the **Kruskal-Wallis test**, which is appropriate for comparing medians in skewed distributions, bypassing the assumptions of normality.
 
-Now, for the domestic movies—you know, the ones with more revenue from the good old US of A—we ran the test, and the p-value was **0.68**. That’s huge. It’s not significant at all. What does that mean? The ratings don’t really matter for domestic movies when it comes to profitability. They’re all doing about the same.
+For domestic movies, the test returned a p-value of **0.68**, which is not statistically significant. This suggests that movie ratings do not have a notable impact on profitability for movies primarily earning revenue in the U.S. market.
 
-But here's the kicker - for the movies that get the overseas money, we got something very, very different. The p-value was **9.6e-09**. That’s incredibly small, folks, and I’m talking **really significant**. This tells us—big time—that the movie rating does matter when it comes to profitability for movies with more international revenue. Big difference, big results, no question about it. The R rating isn't doing as well as PG-13 or PG overseas, folks."
+However, the results were strikingly different for foreign movies. Here, the p-value was **9.6e-09**, which is incredibly small and **statistically significant**. This indicates that the movie rating does indeed affect profitability for films with higher international revenue. In particular, R-rated movies appear to underperform compared to PG-13 or PG films in international markets.
 
 ## Reviews 
 
-We took a look at audience and critics reviews of the movies. Perhaps better rated movies fare better internationally?
+We took a look at audience and critics reviews of the movies. We hypothesized that perhaps the audience and critic scores of movies influence the international impact of the movie.
 
 <img src="plot_img/audience_score_distribution.png" alt="Audience Scores Distribution" />
 
+Here we can see an approximately normal distribution for both movies with a foreign percentage of revenue higher than 50%, and movies with domestic percentage higher than 50%. The distributions seem to be overlapping and very similar, though the movies that do better internationally seem to be slightly bi-modal between 0.5 and 0.8. On average however, the general public tends to score movies pretty favorably, worldwide.
+
 <img src="plot_img/critics_score_distribution.png" alt="Critics Scores Distribution" />
 
+The same cannot be said for critics scores. While we see the same overlap between the distribution of movies that garner more international or domestic revenue, we do not see the same normal distribution as with the audience score. There is a far more even probability of a movie getting any score within the full range. Again, this is across the board, worldwide. 
+
+What we can conclude from these distributions is that the audience or critics scores do not seem to be correlated with the percentage of foreign revenue of a movie. 
 
 ---
 
@@ -124,10 +127,12 @@ We took a look at audience and critics reviews of the movies. Perhaps better rat
 
 # Conclusion
 
-Alright, Hollywood, listen up. Let me tell you, I know success better than anyone, and I'm about to give you some advice-free of charge, because I care, okey?
+"Alright, Hollywood, listen up. Let me tell you, I know success better than anyone, and I'm about to give you some advice-free of charge, because I care, okey?
 
 Hollywood has the tools, talent, and tenacity to bounce back stronger than ever. By focusing on data-driven strategies, embracing innovation, and delivering content that resonates globally, we can ensure that **Made in America** movies once again dominate the box office.
 
-Believe, me Hollywood, nobody knows how to win over an audience like I do. You'll be number one globally in no time. Let’s make it happen—because nobody does it better than Hollywood!
+Believe, me Hollywood, nobody knows how to win over an audience like I do. You'll be number one globally in no time. Let’s make it happen—because nobody does it better than Hollywood!"
+
+- Donald J. Trump, champion of women's rights
 
 ---
