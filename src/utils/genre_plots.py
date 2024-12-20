@@ -101,7 +101,7 @@ def create_stacked_genre_bar_chart(df_genre_domestic, df_genre_foreign):
         showlegend=True
     )
 
-    fig.show()
+    return fig
 
 
 def create_gernre_proportion_plot(df_genre,df_genre_domestic, df_genre_foreign):
@@ -206,7 +206,7 @@ def create_genre_gross_plot(df, df_genre):
         title_x=0.5
     )
 
-    fig_gross.show()
+    return fig_gross
 
 def create_genre_percentage_plot(df, df_genre):  
     df_percentage = df[['Genres', 'Domestic_Percentage', 'Foreign_Percentage']]
@@ -251,4 +251,4 @@ def create_genre_percentage_plot(df, df_genre):
         title_x=0.5
     )
 
-    fig_percentage.show()
+    return fig_percentage

@@ -29,7 +29,7 @@ def generate_year_plot(df):
             height=500
     )
     fig.update_layout(title=dict(text="Impact of Budget on Foreign Percentage", x=0.5, xanchor='center'))
-    fig.show()
+    return fig
 
 
 def create_box_plot(df, column, y_axis_title, title, log=False): 
