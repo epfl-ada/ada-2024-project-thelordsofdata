@@ -2,7 +2,17 @@
 layout: page
 title: Make Hollywood Great Again
 subtitle: Selma Benhassine, Giada Ehrlich, Ameer Elkhayat, Loïc Finette, Liam Gibbons 
+cover-img: 'assets/img/trump.png'
 ---
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<style>
+    /*Custom css for the page*/
+    .page-heading h1{
+        background-color: rgba(190, 4, 4, 1);
+    }
+</style>
 
 # The Call to Action
 
@@ -139,6 +149,6 @@ Hollywood has the tools, talent, and tenacity to bounce back stronger than ever.
 
 Believe, me Hollywood, nobody knows how to win over an audience like I do. You'll be number one globally in no time. Let’s make it happen—because nobody does it better than Hollywood!"
 
-- Donald J. Trump, champion of women's rights
+    ~ Donald J. Trump, champion of women's rights
 
 ---
