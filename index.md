@@ -157,9 +157,30 @@ What we can conclude from these distributions is that the audience or critics sc
 
 # Analysis
 
+## OLS Coefficient 
+Now that we have explored at the distribution and relationships between the budget, genre, release date, runtime, rating, reviews, and finally the percentage of foreign revenue of a movie, we can now begin to properly analyse these relationships. We want to know which features predict a higher percentage of foreign revenue by comparing the OLS Coefficient of each feature.
+
+The OLS coefficient represents the expected change in the foreign percentage of revenue for a one-unit increase in the predictor variable, holding all other variables constant. It's important to look at the p-value associated with the coefficient to determine whether the relationship is statistically significant.
+
+Below, we compare the OLS coefficients over 2000-2019, but then separate between 2000-2010 and 2010-2019 in order to take a closer look at more recent impact of the features.
+
+We checked the features for collinearity and found a possible collinearity with the ratings. We therefore decided to drop the R-rated movies in order to remove this obstacle.
+
+## Results
 {% include OLS_features_all_years.html %}
-{% include OLS_features_post_2010.html %}
+
+We can see that the most important feature is the genre animation. With a p-value of nearly 0, animated movies are highly likely to have a 57% increase in foreign percent of revenue. This is very significant. On the other hand, again with a miniscule p-value, sports movies are likely to have a 56% decrease in foreign percent of revenue. These are important factors to consider - not only which features to aim for, but what features to avoid.
+
+We also see a strong impact of the release during the holiday season (November and December) and a high budget on the percentage of the movie. We continue below be comparing older and more recent movies.
+
 {% include OLS_features_pre_2010.html %}
+
+The most important features seem to remain the same, although war movies graphically seem to be more internationally popular in the years before 2010. However, with a p-value larger than 0.01, it is not with as much certainty as the other features. Still, an interesting and relevant detail.
+
+{% include OLS_features_post_2010.html %}
+
+By taking a closer look at more recent movies, we can conclude with certainty that animated adventure movies released around November and December are very likely to have a significant increase in the foreign percent of the revenue.
+
 
 ---
 
