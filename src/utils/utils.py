@@ -249,7 +249,7 @@ def plot_rating_profit_count(rating_df):
     )
 
     fig_combined = fig_combined_plots(fig_box, fig_bar, "Movie Counts", log = False)
-    fig_combined
+    return fig_combined
 
 
 def statistical_relevance_ratings(df):
@@ -369,4 +369,4 @@ def plot_emotion_pie(df):
     for annotation in fig2['layout']['annotations']:
         annotation['font'] = dict(size=15)  # Smaller font for subplot titles
 
-    fig2
+    return fig2
