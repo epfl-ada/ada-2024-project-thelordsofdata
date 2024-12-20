@@ -89,12 +89,11 @@ We've decided to look at the following factors:
 - Reviews (Audience, Critics)
 - Ratings
 - Budget
-- Total Revenue
 - Runtime
 - Emotional Analysis of Plot Summary
 
 The result we want to look at is:
-- Foreign revenue (gross, percentage)
+- Foreign revenue (percentage)
 
 # Data Exploration
 
