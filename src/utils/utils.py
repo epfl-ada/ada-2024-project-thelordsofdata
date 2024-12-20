@@ -11,10 +11,7 @@ from plotly.subplots import make_subplots
 import plotly.express as px
 from matplotlib import pyplot as plt
 
-<<<<<<< HEAD
-=======
 import scipy.stats as stats
->>>>>>> 11cb7f5a46a2545ca456cbf2ad056364df88b847
 
 # Generates the line plots for foreign percentage and domestic in function of the years
 def generate_year_plot(df):
@@ -232,22 +229,6 @@ def plot_audience_score_distribution(data_domestic, data_foreign, bin_edges=None
     plt.show()
 
 
-<<<<<<< HEAD
-def plot_rating_profit_count(rating_df):
-    ## box plot check the plots.. 
-
-    fig_box = px.box(
-        rating_df,
-        x="Rating", 
-        y="log_profit",
-        color="Foreign_higher",  
-        title="Distribution of Log Profitability by Rating",
-        labels={"Foreign_higher": "Revenue Type", "log_profit": "Log of Profitability"},
-        color_discrete_map={"Domestic % > 50%": "blue", "Foreign % > 50%": "red"}, 
-        category_orders={"Foreign_higher": [0, 1]}, 
-    )
-
-=======
 def plot_rating_profit_count(final_df):
     # Box plot grouped by Rating and Foreign_higher
     fig_box = px.box(
@@ -262,7 +243,6 @@ def plot_rating_profit_count(final_df):
     )
 
     # Update the legend labels dynamically
->>>>>>> 11cb7f5a46a2545ca456cbf2ad056364df88b847
     fig_box.for_each_trace(
         lambda t: t.update(name="")
     )
@@ -270,32 +250,12 @@ def plot_rating_profit_count(final_df):
     fig_box.update_layout(
         title={
             "text": "Distribution of Log Profitability by Rating",
-<<<<<<< HEAD
-            "x": 0.5,  
-            "xanchor": "center",  
-=======
             "x": 0.5,  # Center the title
             "xanchor": "center",  # Anchor the title to the center
->>>>>>> 11cb7f5a46a2545ca456cbf2ad056364df88b847
         },
         xaxis_title="Rating",
         yaxis_title="Log of Profitability",
         legend_title="Revenue Type",
-<<<<<<< HEAD
-        boxmode="group",  
-    )
-
-    fig_bar = px.histogram(
-        rating_df,
-        x="Rating",
-        color="Foreign_higher",  
-        barmode="group",  
-        title="Count of Movies by Rating (Separated by Foreign Percentage)",
-        color_discrete_map={"Domestic % > 50%": "blue", "Foreign % > 50%": "red"}, 
-    )
-
-
-=======
         boxmode="group",  # Ensures box plots are grouped side-by-side
     )
 
@@ -310,26 +270,10 @@ def plot_rating_profit_count(final_df):
     )
 
     # Update the legend labels dynamically
->>>>>>> 11cb7f5a46a2545ca456cbf2ad056364df88b847
     fig_bar.for_each_trace(
         lambda t: t.update(name="Movies with domestic % > 50%" if t.name == "0" else "Movies with foreign % > 50%")
     )
 
-<<<<<<< HEAD
-    fig_bar.update_layout(
-        xaxis_title="Rating",
-        yaxis_title="Count of Movies",
-        showlegend=False, 
-        yaxis=dict(
-            autorange="reversed",  
-        )
-    )
-
-    fig_combined = fig_combined_plots(fig_box, fig_bar, "Movie Counts", log = False)
-    return fig_combined
-
-
-=======
     # Update the layout of the bar chart
     fig_bar.update_layout(
         xaxis_title="Rating",
@@ -393,7 +337,6 @@ def plot_rating_profit_count(final_df):
 
 
 
->>>>>>> 11cb7f5a46a2545ca456cbf2ad056364df88b847
 def statistical_relevance_ratings(df):
     # 1. Shapiro-Wilk Test for Normality on log-transformed profitability
     shapiro_results = stats.shapiro(df["log_profit"])
@@ -433,86 +376,4 @@ def statistical_relevance_ratings(df):
         
         # Perform ANOVA for foreign movies
         f_stat_foreign, p_value_anova_foreign = stats.f_oneway(*ratings_groups_foreign)
-<<<<<<< HEAD
         print(f"ANOVA p-value (Foreign Movies): {p_value_anova_foreign}")
-
-def plot_emotion_pie(df):
-    # Define a custom color map for emotions
-    color_map = {
-        'anger': 'red',
-        'sadness': 'blue',
-        'joy': 'gold',
-        'disgust': 'green',
-        'neutral': 'brown',
-        'surprise': 'hotpink',
-        'fear': 'purple'
-    }
-
-    # Separate data for each group
-    domestic_counts = df[df['Foreign_higher'] == 0]['emotion'].value_counts().reset_index()
-    domestic_counts.columns = ['emotion', 'Counts']
-
-    foreign_counts = df[df['Foreign_higher'] == 1]['emotion'].value_counts().reset_index()
-    foreign_counts.columns = ['emotion', 'Counts']
-
-    # Create a subplot figure with two pie charts
-    fig2 = make_subplots(
-        rows=1, cols=2, 
-        specs=[[{'type': 'domain'}, {'type': 'domain'}]], 
-        subplot_titles=[
-            "Movies with Domestic % > 50%", 
-            "Movies with Foreign % > 50%"
-        ]
-    )
-
-    # Add pie chart for domestic movies
-    fig2.add_trace(
-        px.pie(
-            domestic_counts, 
-            names='emotion', 
-            values='Counts', 
-            color='emotion',
-            color_discrete_map=color_map
-        ).data[0], 
-        row=1, col=1
-    )
-
-    # Add pie chart for foreign movies
-    fig2.add_trace(
-        px.pie(
-            foreign_counts, 
-            names='emotion', 
-            values='Counts', 
-            color='emotion',
-            color_discrete_map=color_map
-        ).data[0], 
-        row=1, col=2
-    )
-
-    # Update layout to center title, adjust subplot titles, and show the legend
-    fig2.update_layout(
-        title=dict(
-            text="Emotion Distribution Comparison",
-            x=0.5,  # Center align the title
-            xanchor="center"
-        ),
-        showlegend=True,  # Enable the legend
-        legend=dict(
-            orientation="h",  # Horizontal legend
-            x=0.5,
-            xanchor="center",
-            y=-0.1
-        ),
-        font=dict(
-            size=12  # Adjust font size for subplot titles
-        )
-    )
-
-    # Adjust subplot title font size
-    for annotation in fig2['layout']['annotations']:
-        annotation['font'] = dict(size=15)  # Smaller font for subplot titles
-
-    return fig2
-=======
-        print(f"ANOVA p-value (Foreign Movies): {p_value_anova_foreign}")
->>>>>>> 11cb7f5a46a2545ca456cbf2ad056364df88b847
