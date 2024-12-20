@@ -74,18 +74,26 @@ Now, you might’ve already guessed it—more budget means more marketing, more 
 ## Genre
 
 {% include genre_proportional.html %}
+
+"Folks, look at the charts, we’ve got some amazing insights here. Comedy, believe me, it’s doing much better in the United States, but look, terrible, terrible results abroad. Why? It’s all about culture, it’s all about language—stuff that’s hard to translate overseas. The jokes just don’t work the same. But you know what does work abroad? Action, drama, and adventure. These are the big ones. You’ve got explosions, you’ve got emotion, you’ve got everything people love—boom, pow, all that good stuff. And that, my friends, crosses borders easily."
+
 {% include genre_percentage.html %}
-Average, domestic > foreign, but not for fantasy, science fiction, adventure
+
+"Now, let’s get this straight: While drama does well overseas, there are fewer drama movies that are smashing it abroad compared to those that are killing it here in the U.S. So, while people love a good drama, it’s still the action, adventure, and sci-fi movies that are raking in the big bucks on the international stage.
+
+And let's be honest—some genres are just All-American, okay? If we want to make sure we’re attracting foreign audiences, we might want to stay away from teen, indie, and comedy films. Stick to what works, folks. Stick to the winners."
 
 ## Month
 
 {% include month_percentage.html%}
 
+As we can see, the movies that do best internationally tend to be released during the holiday season - November and December. We believe that the biggest blockbuster movies tend to be released around that season due to big holiday movie themes - Christmas, Hannukah, etc. These themes are pretty spread internationally, which makes these movies internationally appealing. On the other hand, we see here a missed opportunity to attract foreign audiences during the summer months, specifically August, where the percentage of foreign revenue is smallest. If we market our big summer blockbusters to international audiences, we have the opportunity to make big profits while everyone is on summer vacation.
+
 ## Runtime
 
 {% include runtime_plot.html %}
 
-From the runtime box plots we can observe that there is not much difference in the runtime of movies between the classes. The class where the domestic percentage dominates has a median of 103 and the other class, a median of 108. They both contain a similar amout of outliers. It is to note that for the blue class, there is one big outlier: a movie that has a runtime of 222 minutes.
+From the runtime box plots we can observe that there is not much difference in the runtime of movies between the classes. The class where the domestic percentage dominates has a median of 103 and the other class, a median of 108. They both contain a similar amount of outliers. It is to note that for the blue class, there is one big outlier: a movie that has a runtime of 222 minutes.
 
 ## Ratings
 
@@ -110,42 +118,16 @@ We took a look at audience and critics reviews of the movies. Perhaps better rat
 
 ---
 
-List of graphs:
-
-- Scatterplot: Worldwide gross vs foreign percentage
-- DEA: Genre counts, bar plot
-- avg worldwide gross per genre, bar for domestic and foreign
-- box plot genre revenue, domestic vs foreign
-- percentage, per genre, domestic vs foreign bar
-- distrubtion box plot for domestic vs foreign percentage, when movie made money, when movie lost money (less foreign in that case!)
-- Confidence intervals correlation for each variable with foreign percentage
-- Distribution of years bar, to show why we stopped at 2019
-- Gross over the years, then separated into domestic and foreign
-- Foreign gross over years with median, IQR, wiskers, and mean
-- Genre proportion over time, drama goes up
-- Budget over the years
-- Proportional distribution of profitable movies per year
-- Scatterplot budget domestic-percentage
-- Budget vs Success Rate (revenue/budget) scatterplot with success/failure threshold
-- Scatterplot runtime and domestic percentage
-- OLS Regression
-
-Path of duality 
-They have lo wnand high budget, we have foreign and domestic 
-how is it spread in pie chart betwen 2 things
- bar plot genre distribution percentage 
- plotted runtme with color code between 2 things scatterplot
- OLS for both
- explain most important ones based on OLS
-
 # Analysis
 
 ---
 
 # Conclusion
 
+Alright, Hollywood, listen up. Let me tell you, I know success better than anyone, and I'm about to give you some advice-free of charge, because I care, okey?
+
 Hollywood has the tools, talent, and tenacity to bounce back stronger than ever. By focusing on data-driven strategies, embracing innovation, and delivering content that resonates globally, we can ensure that **Made in America** movies once again dominate the box office.
 
-Let’s make it happen—because nobody does it better than Hollywood!
+Believe, me Hollywood, nobody knows how to win over an audience like I do. You'll be number one globally in no time. Let’s make it happen—because nobody does it better than Hollywood!
 
 ---
