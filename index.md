@@ -85,6 +85,7 @@ We've decided to look at the following factors:
 - Budget
 - Total Revenue
 - Runtime
+- Emotional Analysis of Plot Summary
 
 The result we want to look at is:
 - Foreign revenue (gross, percentage)
@@ -152,6 +153,12 @@ Here we can see an approximately normal distribution for both movies with a fore
 The same cannot be said for critics scores. While we see the same overlap between the distribution of movies that garner more international or domestic revenue, we do not see the same normal distribution as with the audience score. There is a far more even probability of a movie getting any score within the full range. Again, this is across the board, worldwide. 
 
 What we can conclude from these distributions is that the audience or critics scores do not seem to be correlated with the percentage of foreign revenue of a movie. 
+
+## Sentimental Analysis of Plot Summary
+
+{% include emotions_pie.html %}
+
+There are certainly more movies that have a higher domestic percentage of revenue than those with foreign. The differences seem to be pretty stable across the different emotions. It is also intuitive that the neutral emotion is dominant, as the plot summaries are supposed to be communicated in a neutral tone, and our model is not perfect in detecting emotions through actions described neutrally. We will see in later analysis if the emotions have an impact on the foreign percent of revenue or not.
 
 ---
 
