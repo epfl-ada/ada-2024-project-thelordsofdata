@@ -190,7 +190,7 @@ The most important features seem to remain the same, although war movies graphic
 
 {% include OLS_features_post_2010.html %}
 
-By taking a closer look at more recent movies, we can conclude with certainty that animated adventure movies released around November and December are very likely to have a significant increase in the foreign percent of the revenue.
+By taking a closer look at more recent movies, we can conclude with certainty that animated adventure movies released around November and December are very likely to have a significant increase in the foreign percent of the revenue. Furthermore we see the appearance of the surprise emotion. It has a relatively high negative correlation between the years 2010 - 2019. The emotion of disgust also makes an appearance with a positive coefficient. 
 
 
 ---
