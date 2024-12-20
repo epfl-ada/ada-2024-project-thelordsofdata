@@ -71,6 +71,6 @@ pip install -r requirements.txt
 ├── results.ipynb               <- Notebook that displays all the results obtained, with all plots shown in the data story present
 │
 ├── .gitignore                  <- List of files ignored by git
-├── pip_requirements.txt        <- File for installing python dependencies
+├── requirements.txt        <- File for installing python dependencies
 └── README.md
 ```
