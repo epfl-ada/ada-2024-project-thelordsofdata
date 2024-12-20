@@ -59,9 +59,16 @@ Average, domestic > foreign, but not for fantasy, science fiction, adventure
 
 # Runtime
 
-# 
+# Ratings
 
-# Total Revenue
+{% include profit_rating_count.html %}
+
+# Reviews 
+
+<img src="plot_imgs/audience_score_distribution.png" alt="Audience Scores Distribution" />
+
+<img src="plot_imgs/critics_score_distribution.png" alt="Critics Scores Distribution" />
+
 
 ---
 
