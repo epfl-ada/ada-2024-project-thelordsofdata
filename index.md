@@ -16,7 +16,7 @@ You better believe it folks! We’re going to outshine, outclass, and outplay ev
 
 Words from the former and future convicted President himself. So let's get started.
 
-## Dataset
+# Dataset
 
 ## Data Sources
 
@@ -24,7 +24,7 @@ The original CMU dataset only contains information on the total revenue generate
 
 Because our foreign gross represented the result we wanted to analyse, we needed to find more potentially influencing factors. We did so by web scraping from The Numbers for domestic/foreign gross, Rotten Tomatoes for reviews/plot summary, Wikipedia for country/language, and Box Office Mojo for domestic/foreign gross/ratings.
 
-# Fact-checking Mr Trump
+## Fact-checking Mr Trump
 
 We decided to compare movies that generate most of their revenue domestically and internationally. We assign movies that make more than 50 % of their revenue internationally to the red class and the other movies to the blue class. We the compute the profitability of a movie according to the following formula:
 
