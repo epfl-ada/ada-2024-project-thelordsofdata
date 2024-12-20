@@ -73,12 +73,7 @@ Now, you might’ve already guessed it—more budget means more marketing, more 
 
 ## Genre
 
-{% include domestic_revenue_by_genre.html %}
-Top: adventure, fantasy, science fiction, family film
-{% include foreign_revenue_by_genre.html %}
-Top: adventure, fantasy, science fiction, action
-{% include genre_gross.html %}
-Foreign > gross top: action, adventure, drama
+{% include genre_proportional.html %}
 {% include genre_percentage.html %}
 Average, domestic > foreign, but not for fantasy, science fiction, adventure
 
