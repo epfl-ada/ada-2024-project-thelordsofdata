@@ -82,7 +82,9 @@ Foreign > gross top: action, adventure, drama
 {% include genre_percentage.html %}
 Average, domestic > foreign, but not for fantasy, science fiction, adventure
 
-## Date
+## Month
+
+{% include month_percentage.html%}
 
 ## Runtime
 
