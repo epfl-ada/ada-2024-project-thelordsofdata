@@ -102,9 +102,10 @@ The result we want to look at is:
 
 {% include profitability_budget.html %}
 
-Looking at the data, we can observe a clear relationship between budget and foreign percentage. The Pearson correlation coefficient is 0.33, indicating a moderate positive correlation between these two variables. Furthermore, the p-value is less than 0.05, which is statistically significant—this suggests that the relationship we’re seeing is not due to chance.
 
-In simpler terms, as the budget increases, there's a tendency for movies to earn a higher percentage of their revenue from international markets. This makes sense: larger budgets often mean more resources for marketing and wider global distribution, which can lead to increased box office sales abroad.
+From the graph we can observe that movies that do better internationally have a much higher median than the ones that perform better domestically. The median for the blue class is 28.42 millions dollars and for the red class is 56.51 million dollars. That's about double the median budget for the foreign class! Furthermore movies that perform better domestically tend to have a lower budget than the ones that perform better internationally. The minimum value for the blue class is 10.46 thousand dollars and for the red class it is 317.41 thousand dollars. 
+
+In simpler terms, with a higher budget, movies are able to earn a higher percentage of their revenue from international markets. This makes sense: larger budgets often mean more ressources for marketing and wider global distribution, which can lead to increased box office sales abroad.
 
 ## Genre
 
