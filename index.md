@@ -28,9 +28,11 @@ Because our foreign gross represented the result we wanted to analyse, we needed
 
 We decided to compare movies that generate most of their revenue domestically and internationally. We assign movies that make more than 50 % of their revenue internationally to the red class and the other movies to the blue class. Performing this split, we obtain 1145 movies with a higher foreign percentage and 1544 with a higher domestic percentage. We then compute the profitability of a movie according to the following formula:
 
+<div>
 $$
 Profitability = \frac{Worldwide Gross}{Budget} 
 $$
+</div>
 
 {% include profitability_by_class.html %}
 
