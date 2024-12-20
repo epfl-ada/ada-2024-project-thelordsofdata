@@ -72,13 +72,19 @@ Average, domestic > foreign, but not for fantasy, science fiction, adventure
 
 {% include profit_rating_count.html %}
 
+Domestic p-value: 0.7284
+Foreign p-value: 1.5799e-8 
+while ignoring g rating for too low count, found using the Kruskal-Wallis H test as the data is skewed and therefore not normally distributed. It compares the medians of the 3 independent groups.
 
+These p-values tell us that the average profitability of movies that garner more domestic revenue do not seem to be impacted by the movie's ratings, but movies with more foreign revenue are more likely to, due to a highly significant p-value. 
 
 ## Reviews 
 
-<img src="plot_imgs/audience_score_distribution.png" alt="Audience Scores Distribution" />
+We took a look at audience and critics reviews of the movies. Perhaps better rated movies fare better internationally?
 
-<img src="plot_imgs/critics_score_distribution.png" alt="Critics Scores Distribution" />
+<img src="plot_img/audience_score_distribution.png" alt="Audience Scores Distribution" />
+
+<img src="plot_img/critics_score_distribution.png" alt="Critics Scores Distribution" />
 
 
 ---
