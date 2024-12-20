@@ -171,9 +171,9 @@ Now that we have explored at the distribution and relationships between the budg
 
 The OLS coefficient represents the expected change in the foreign percentage of revenue for a one-unit increase in the predictor variable, holding all other variables constant. It's important to look at the p-value associated with the coefficient to determine whether the relationship is statistically significant.
 
-Below, we compare the OLS coefficients over 2000-2019, but then separate between 2000-2010 and 2010-2019 in order to take a closer look at more recent impact of the features.
+Below, we compare the OLS coefficients over 2000-2019, but then separate between 2000-2010 and 2010-2019 in order to take a closer look at more recent impact of the features. We seperated these analyses based on the time series graph in section **Fact-checking Mr Trump**
 
-We checked the features for collinearity and found a possible collinearity with the ratings. We therefore decided to drop the R-rated movies in order to remove this obstacle.
+We Standardized and one-hot encoded categorical columns, we check for multicollinearity using a Variance inflation factor. We found a possible collinearity with the ratings. We therefore decided to drop the R-rated movies in order to remove this obstacle. We only display coefficients with p-values less than 0.05 in our following plots.
 
 ## Results
 {% include OLS_features_all_years.html %}
