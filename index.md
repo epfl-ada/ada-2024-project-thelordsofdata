@@ -76,7 +76,7 @@ Average, domestic > foreign, but not for fantasy, science fiction, adventure
 
 ## Runtime
 
-{% include runtime.html %}
+{% include runtime_plot.html %}
 
 From the runtime box plots we can observe that there is not much difference in the runtime of movies between the classes. The class where the domestic percentage dominates has a median of 103 and the other class, a median of 108. They both contain a similar amout of outliers. It is to note that for the blue class, there is one big outlier: a movie that has a runtime of 222 minutes.
 
