@@ -63,6 +63,10 @@ On the plot summary we performed an emotional classification using Hartman's Dis
 
 After cleaning and merging the data, we focused on movies released between 2000-2019, with a total of 2689 movies that met our criteria of having at least 90 entries per year. This dataset is our starting point for uncovering trends that drive foreign revenue.
 
+### A quick interjection from Mr. Trump: 
+
+"Alright, folks, before the liberal left starts accusing me of **faking the numbers** again, let me set the record straight. We did something **smart**—we **adjusted the data**. Here’s the deal: **Inflation** and **outliers**-if you ignore them, you're just asking for fake news. It’s a total disaster. So, we did the right thing: we **adjusted** all USD amounts for inflation and took the logarithm of variables including budget and profitability to include outliers without letting them influence our analysis."
+
 ## Fact-checking Mr Trump
 
 We decided to compare movies that generate most of their revenue domestically and internationally. We assign movies that make more than 50 % of their revenue internationally to the red class and the other movies to the blue class. Performing this split, we obtain 1145 movies with a higher foreign percentage and 1544 with a higher domestic percentage. We then compute the profitability of a movie by dividing the revenue by the budget, then taking the logarithm to account for outliers.
@@ -93,10 +97,6 @@ The result we want to look at is:
 - Foreign revenue (gross, percentage)
 
 # Data Exploration
-
-A quick interjection from Mr. Trump: 
-
-"Alright, folks, before the liberal left starts accusing me of **faking the numbers** again, let me set the record straight. We did something **smart**—we **adjusted the data**. Here’s the deal: **Inflation** and **outliers**-if you ignore them, you're just asking for fake news. It’s a total disaster. So, we did the right thing: we **adjusted** all USD amounts for inflation and took the logarithm of variables including budget and profitability to include outliers without letting them influence our analysis."
 
 ## Budget
 
