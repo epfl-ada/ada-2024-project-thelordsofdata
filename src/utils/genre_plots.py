@@ -76,7 +76,7 @@ def create_stacked_genre_bar_chart(df_genre_domestic, df_genre_foreign):
         fig.add_trace(
             go.Bar(
                 name=row['Genres'],
-                x=['Movies with domestic % > 50%'],  # Single bar category for domestic
+                x=['Movies with domestic % > 50%'], 
                 y=[row['count']],
                 hoverinfo='y'
             )
@@ -86,7 +86,7 @@ def create_stacked_genre_bar_chart(df_genre_domestic, df_genre_foreign):
         fig.add_trace(
             go.Bar(
                 name=row['Genres'],
-                x=['Movies with foreign % > 50%'],  # Single bar category for foreign
+                x=['Movies with foreign % > 50%'],  
                 y=[row['count']],
                 hoverinfo='y'
             )
@@ -108,32 +108,31 @@ def create_gernre_proportion_plot(df_genre,df_genre_domestic, df_genre_foreign):
     domestic_counts = df_genre_domestic.groupby('Genres').size().reset_index(name='count')
     foreign_counts = df_genre_foreign.groupby('Genres').size().reset_index(name='count')
 
-    # Normalize counts to proportions
     domestic_counts['proportion'] = domestic_counts['count'] / domestic_counts['count'].sum()
     foreign_counts['proportion'] = foreign_counts['count'] / foreign_counts['count'].sum()
 
-    # Function to generate a random RGB color
+
     def generate_random_color():
-        r = random.randint(0, 255)  # Random value for red (0-255)
-        g = random.randint(0, 255)  # Random value for green (0-255)
-        b = random.randint(0, 255)  # Random value for blue (0-255)
+        r = random.randint(0, 255) 
+        g = random.randint(0, 255)  
+        b = random.randint(0, 255)  
         return f"rgb({r}, {g}, {b})"
 
     genre_colors = {genre: generate_random_color() for genre in df_genre['Genres'].unique()}
 
-    # Sort the counts by proportion in ascending order
+
     domestic_counts_sorted = domestic_counts.sort_values('proportion', ascending=True)
     foreign_counts_sorted = foreign_counts.sort_values('proportion', ascending=True)
 
-    # Create a figure
+
     fig2 = go.Figure()
 
-    # Add each genre for Domestic Movies as a segment in the stacked bar
+
     for index, row in domestic_counts_sorted.iterrows():
         fig2.add_trace(
             go.Bar(
                 name=row['Genres'],
-                x=['Movies with domestic % > 50%'],  # Single bar category for domestic
+                x=['Movies with domestic % > 50%'], 
                 y=[row['proportion']],
                 hoverinfo='y',
                 marker_color=genre_colors[row['Genres']],
@@ -141,12 +140,11 @@ def create_gernre_proportion_plot(df_genre,df_genre_domestic, df_genre_foreign):
             )
         )
 
-    # Add each genre for Foreign Movies as a segment in the stacked bar
     for index, row in foreign_counts_sorted.iterrows():
         fig2.add_trace(
             go.Bar(
                 name=row['Genres'],
-                x=['Movies with foreign % > 50%'],  # Single bar category for foreign
+                x=['Movies with foreign % > 50%'],  
                 y=[row['proportion']],
                 hoverinfo='y',
                 marker_color=genre_colors[row['Genres']],
@@ -155,20 +153,19 @@ def create_gernre_proportion_plot(df_genre,df_genre_domestic, df_genre_foreign):
             )
         )
 
-    # Update layout to stack the bars and use consistent colors
     fig2.update_layout(
         barmode='stack',
         title={
             'text': 'Stacked Bar Chart of Movies by Genre (Proportional)',
-            'x': 0.5,  # Centers the title
-            'xanchor': 'center',  # Anchors the title at the center
+            'x': 0.5, 
+            'xanchor': 'center', 
         },
         xaxis_title='Category',
         yaxis_title='Proportion of Movies',
         legend_title='Genres',
         showlegend=True,
-        bargap=0.5,  # Reduce gap between bars (default is 0.2)
-        height=600,  # Increase the height of the plot to stretch vertically
+        bargap=0.5, 
+        height=600,  
         yaxis=dict(
             scaleanchor="x",
         ),
@@ -179,27 +176,24 @@ def create_gernre_proportion_plot(df_genre,df_genre_domestic, df_genre_foreign):
 
 def create_genre_gross_plot(df, df_genre): 
 
-    genre_gross = {genre: {'Domestic(USD)_Inflated': 0, 'Foreign(USD)_Inflated': 0} for genre in df_genre['Genres'].unique()}  # Dictionary to store the gross for each genre
+    genre_gross = {genre: {'Domestic(USD)_Inflated': 0, 'Foreign(USD)_Inflated': 0} for genre in df_genre['Genres'].unique()}  
 
-    df_filtered_dom_for_gen = df[['Genres', 'Domestic(USD)_Inflated', 'Foreign(USD)_Inflated']]  # Keeping only the relevant columns
+    df_filtered_dom_for_gen = df[['Genres', 'Domestic(USD)_Inflated', 'Foreign(USD)_Inflated']] 
 
-
-    # Iterating through the filtered dataset and summing gross for each genre
     for idx, row in df_filtered_dom_for_gen.iterrows():
-        genres = str(row['Genres']).replace('/', ', ').split(', ')# Splitting the genres of the current movie ('/' and ', ' considered as separations)
-        domestic = row['Domestic(USD)_Inflated']                          # Storing the corresponding Domestic(USD) value
-        foreign = row['Foreign(USD)_Inflated']                            # Storing the corresponding Foreign(USD) value
+        genres = str(row['Genres']).replace('/', ', ').split(', ')
+        domestic = row['Domestic(USD)_Inflated']                         
+        foreign = row['Foreign(USD)_Inflated']                            
         
         for genre in genres:
-            # If the genre is in the top 20, we sum the gross to that genre
+   
             if genre in df_genre['Genres'].unique():
                 genre_gross[genre]['Domestic(USD)_Inflated'] += domestic
                 genre_gross[genre]['Foreign(USD)_Inflated'] += foreign
 
-    # Converting the dictionary into a DataFrame for plotting
-    df_genre_gross = pd.DataFrame(genre_gross).T  # Transposing
-    df_genre_gross = df_genre_gross[['Domestic(USD)_Inflated', 'Foreign(USD)_Inflated']]  # Keeping only the relevant columns for plotting
-
+  
+    df_genre_gross = pd.DataFrame(genre_gross).T 
+    df_genre_gross = df_genre_gross[['Domestic(USD)_Inflated', 'Foreign(USD)_Inflated']]  
     df_genre_gross = df_genre_gross.rename(columns={'Domestic(USD)_Inflated': 'Domestic Revenue (USD)', 'Foreign(USD)_Inflated': 'Foreign Revenue (USD)'})
 
     fig_gross = px.bar(
@@ -214,26 +208,25 @@ def create_genre_gross_plot(df, df_genre):
 
     fig_gross.show()
 
-    # Creating a new DataFrame excluding rows with NaN in the relevant columns so it doesn't affect the final plots
 def create_genre_percentage_plot(df, df_genre):  
     df_percentage = df[['Genres', 'Domestic_Percentage', 'Foreign_Percentage']]
 
-    # Initializing a dictionary to store mean percentages for each genre in the top 20
+
     genre_percentages = {genre: {'Domestic_Percentage': [], 'Foreign_Percentage': []} for genre in df_genre['Genres'].unique()}
 
-    # Iterating through the filtered dataset and collecting percentages for each genre
+
     for idx, row in df_percentage.iterrows():
-        genres = str(row['Genres']).replace('/', ', ').split(', ')# Splitting the genres of the current movie ('/' and ', ' considered as separations)
-        Domestic_Percentage = row['Domestic_Percentage']          # Storing the corresponding Domestic_Percentage value
-        Foreign_Percentage = row['Foreign_Percentage']            # Storing the corresponding Foreign_Percentage value
+        genres = str(row['Genres']).replace('/', ', ').split(', ')
+        Domestic_Percentage = row['Domestic_Percentage']         
+        Foreign_Percentage = row['Foreign_Percentage']            
         
         for genre in genres:
-            # If the genre is in the top 20, we collect the percentages for that genre
+         
             if genre in df_genre['Genres'].unique():
                 genre_percentages[genre]['Domestic_Percentage'].append(Domestic_Percentage)
                 genre_percentages[genre]['Foreign_Percentage'].append(Foreign_Percentage)
 
-    # Calculating the mean percentages for each genre
+
     mean_percentages = {
         genre: {
             'Domestic_Percentage': sum(values['Domestic_Percentage']) / len(values['Domestic_Percentage']),
