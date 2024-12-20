@@ -16,8 +16,15 @@ You better believe it folks! We’re going to outshine, outclass, and outplay ev
 
 Words from the former and future convicted President himself. So let's get started.
 
+# Exploratory Data Analysis
+
 {% include year_plot.html %}
 
+The foreign percentage steadily goes up until 2015. Then it starts going down. We need it to keep going up
+
+{% include budget_foreign.html %}
+
+The budget is correlated to the foreign percentage. This correlation is statiscally significant significant since the pearson coefficient is 0.33 and the p value is less than 0.05. 
 ## Dataset
 
 # Data Sources
