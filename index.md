@@ -125,6 +125,10 @@ What we can conclude from these distributions is that the audience or critics sc
 
 # Analysis
 
+{% include OLS_features_all_years.html %}
+{% include OLS_features_post_2010.html %}
+{% include OLS_features_pre_2010.html %}
+
 ---
 
 # Conclusion
