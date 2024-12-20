@@ -34,7 +34,7 @@ After cleaning and merging the data, we focused on movies released between 2000-
 We decided to compare movies that generate most of their revenue domestically and internationally. We assign movies that make more than 50 % of their revenue internationally to the red class and the other movies to the blue class. Performing this split, we obtain 1145 movies with a higher foreign percentage and 1544 with a higher domestic percentage. We then compute the profitability of a movie by dividing the revenue by the budget
 
 
-{% include profitability_by_class.html %}
+{% include log_profitability_count.html %}
 
 The outliers were removed from the box plots. From the box plots we can observe that the class with more than 50 % of their revenue coming from foreign countries has a higher median than the domestic class. However the red class shows a bit more variance. This confirms that movies that generate more of their revenue internationally are more profitable. Therefore Hollywood should focus on catering to an international audience.
 
@@ -65,7 +65,7 @@ Now, we’ve got the real facts, folks. It’s not just about making a ton of mo
 
 ## Budget
 
-{% include budget_foreign.html %}
+{% include log_budget.html %}
 
 Look at the data, folks—it's clear as day: **budget** is closely linked to **foreign percentage**. We've got a **Pearson coefficient** of **0.33**, and the **p-value** is **less than 0.05**—that’s statistically significant! This isn’t some fake news, it’s real data, proving that bigger budgets bring in more international success. Simple, folks!
 
