@@ -7,6 +7,7 @@ from sentence_transformers import SentenceTransformer, util
 from collections import defaultdict
 import seaborn as sns
 
+# Generates the line plots for foreign percentage and domestic in function of the years
 def generate_year_plot(df):
     average_percentages = df.groupby('Year')[['Foreign_Percentage', 'Domestic_Percentage']].mean()
     average_percentages = average_percentages.reset_index()
