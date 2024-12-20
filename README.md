@@ -21,53 +21,40 @@ We started with the CMU movie.metadata dataset. It contains 81740 movies with th
 # Methods
 ## Data preprocessing
 ### 1. Cleaning the CMU dataset
-Within the CMU dataset, the columns that were no longer needed were removed (e.g. Movie Runtime). Any typos that involved special characters were removed and modifications were made to columns where any unnecessary supplementary information was contained. However, we chose to keep the rows which had NaN values in the columns we need. This missing information was provided by supplemental datasets. We removed the rows that contains NaNs on a case-by-case basis for each of the analysis steps that we did, depending on what data was needed for each step.
+Within the CMU dataset, the columns that were no longer needed were removed (e.g. the Wikipedia and Free base IDs). Any typos that involved special characters were removed and modifications were made to columns where any unnecessary supplementary information was contained. However, any rows that had NaNs in columns that we required were removed or replaced by information obtained via the scraping method detailed above.
 
 ### 2. Supplementing dataset
-Using the additional datasets mentioned in the section above, we augmented the CMU dataset by adding the following four additional columns: budget, domestic gross, foreign gross, and worldwide gross. Any movies that coincided with the CMU dataset were merged together while any new movies were concatenated at the end. Some of the additional movies added were produced from abroad and therefore help to strengthen the size of our foreign movies.
+In order to augment the CMU dataset, we used the scraping method mentioned above which resulted in the addition of additional columns,  of which the most important include budget, domestic gross, foreign gross, and worldwide gross. Any movies that coincided with the CMU dataset were merged together while any new movies were concatenated at the end. The addition of new movies at the end help to bring up the number of movies in our dataset to nearly 2,700.
 
-Finally, we calculated the percentage of the worldwide gross that comes from domestic and foreign revenues and added them in two additional columns. This gives us the final dataset from which many of our plots have been and will be based on.
-
-## Initial Analysis
-In our initial analysis, we have a density plot of both the domestic percentage and the foreign percentage share of movie revenue, demonstrating an almost normal distribution but with slight peaks at either end. Other initial plots include looking at the evolution of the average percentage and gross value of foreign and domestic revenues on American movies over the years. 
-
-### 1. Binning data and subsequent Time Series
-Data binning was used in this project to group movies of the same year together, and then will also be used for the next milestone by decade in order to reduce noise, handle missing data, and evaluate trends that have changed over the decades.
-
-### 2. Correlation
-Within this initial analysis, we have two scatterplots which look at how budget influences the percentage of revenue coming from domestic markets and those coming from foreign markets. The Pearson coefficient was then determined in order to evaluate the correlation. The p-value was found to be very low (< 0.05) showing it to be statistically significant.
-
-# Proposed Timeline
-The steps that will need to be completed for the third and final milestone:
-
-### Step 1 - Complete Analysis
-Complete analysis on current data. Now we have looked at foreign vs. domestic revenues with respect to genre, time, and budget. Our next steps will be to look at population, tropes, and time with larger bins.
-
-### Step 2 - Market share globally
-Look at how the global market share of the film industry has evolved over time and see whether the American film industry is shrinking in the face of emerging markets
-
-### Step 3 - Case studies
-Look at a few countries (e.g. India, France, etc...) outside of the United States and look at how the respective factors mentioned in the research questions impact the countries in question. We have already started on India under the test folder.
-
-### Step 4 - Unsupervised learning
-Use unsupervised learning on genre and tropes in order to figure out whether a certain movie that has those characteristics would earn more domestically or internationally
+### 3. Data Exploration
+From the augmented dataset, we were then able to explore how some of the different factors (e.g genre, budget, etc...) impacted the domestic and foreign revenue of these movies. We then plotted different variations of how those respective factors impacted revenue.
 
 
+## Analysis
+For our analysis, we used OLS in order to evaluate the correlation between the different factors and revenue. Some of the factors involved came from performing a sentimental analysis on the plot summaries.
 
-- 15.11.2024    -   Initial Analysis and Data Handling Framework (Milestone 2)
-- 22.11.2024    -   Step 1, Step 2
-- 29.11.2024    -   Homework 2
-- 06.12.2024    -   Step 3
-- 13.12.2024    -   Step 4
-- 20.12.2024    -   Project Milestone 3 Submission
+### OLS Coefficient 
+Now that we have explored at the distribution and relationships between the budget, genre, release date, runtime, rating, reviews, and finally the percentage of foreign revenue of a movie, we can now begin to properly analyse these relationships. We want to know which features predict a higher percentage of foreign revenue by comparing the OLS Coefficient of each feature.
+
+The OLS coefficient represents the expected change in the foreign percentage of revenue for a one-unit increase in the predictor variable, holding all other variables constant. After dropping the columns unrelated to the prediction of the foreign percentage and one-hot encoding the necessary ones, we use a Variance Inflation factor test (VIF) to test for multicolinearity, removing one of the ratings in the process. It's important to look at the p-value associated with the coefficient to determine whether the relationship is statistically significant.
+
+### Sentimental Analysis
+In order to determine whether the mood of a movie could have an impact on what appeals to foreign audience, we performed a sentimental analysis on the plot summaries using the method distillroberta. This then defined each plot summary as expressing a certain emotion which was then associated with the relevant movie, and was used when calculating the OLS.
+
 
 # Organization
 
-- Liam: Step 1 + 3
-- Selma: Step 2 + 3
-- Giada: Step 3 + 4
-- Ameer: Steps 3 + 4
-- Loïc:  Step 4
+- Selma: Website, Data Story, Data Exploration
+- Giada: Data Exploration, Analysis
+- Ameer: Data Exploration, Analysis
+- Loïc:  Website, Data Exploration, Analysis
+- Liam:  Data Exploration
+
+# Running the Results notebook
+All the results can be found in the results.ipynb and the requirements can be obtained by writing the following line:
+```text
+pip install -r requirements.txt
+```
 
 # Data Structure
 ```text
