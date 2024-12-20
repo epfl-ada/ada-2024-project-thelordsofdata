@@ -70,7 +70,7 @@ Use unsupervised learning on genre and tropes in order to figure out whether a c
 - Loïc:  Step 4
 
 # Data Structure
-
+```text
 ├── data                        <- Project data files
 │
 ├── src                         <- Source code
@@ -86,4 +86,4 @@ Use unsupervised learning on genre and tropes in order to figure out whether a c
 ├── .gitignore                  <- List of files ignored by git
 ├── pip_requirements.txt        <- File for installing python dependencies
 └── README.md
-  
+```
